@@ -14,41 +14,53 @@ class Body extends StatelessWidget {
     var kPrimaryLightColor2 = kPrimaryLightColor;
     var kPrimaryLightColor;
     return Background(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            "Welcome To Property", 
-            style:TextStyle(fontWeight : FontWeight.bold),
-          ),
-        SizedBox(height: size.height * 0.03), 
-        SvgPicture.asset(
-          "assets/icons/chat.svg", 
-          height: size.height*0.45,
-        ), 
-        SizedBox(height: size.height * 0.03), 
-          Container(
-            width: size.width * 0.8,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(29),
-              child: FlatButton(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-                color: kPrimaryColor,
-                onPressed:(){}, 
-                child: Text("LOGIN", style:TextStyle(color: Colors.white)), 
-                    ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              "Welcome To Property", 
+              style:TextStyle(fontWeight : FontWeight.bold),
             ),
+          SizedBox(height: size.height * 0.03), 
+          SvgPicture.asset(
+            "assets/icons/chat.svg", 
+            height: size.height*0.45,
           ), 
-        RoundedButton(
-          text: "LOGIN",
-          press: () {},
+          SizedBox(height: size.height * 0.05), 
+            // Container(
+            //   width: size.width * 0.8,
+            //   child: ClipRRect(
+            //     borderRadius: BorderRadius.circular(29),
+            //     child: FlatButton(
+            //       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            //       color: kPrimaryColor,
+            //       onPressed:(){}, 
+            //       child: Text("LOGIN", style:TextStyle(color: Colors.white)), 
+            //           ),
+            //   ),
+            // ),
+            SizedBox(height: size.height * 0.03),  
+          RoundedButton(
+            text: "LOGIN",
+            press: () {Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return LoginScreen
+                  },
+                ),
+              );
+            },
+          ),
+          RoundedButton(
+            text: "LOGIN",
+            color: kPrimaryLightColor,
+            textColor: Colors.black,
+            press: () {},
+          ),
+        ],
         ),
-        RoundedButton(
-          text: kPrimaryLightColor,
-          textColor: Colors.black,
-          press: () {},
-        ),
-      ],
       ),
     );
   }
