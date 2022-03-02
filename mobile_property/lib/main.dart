@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_property/Screens/WelcomeScreen.dart';
+import 'package:mobile_property/Screens/welcome_screen.dart';
 import 'package:mobile_property/constants.dart';
 
 void main() => runApp(MyApp());
