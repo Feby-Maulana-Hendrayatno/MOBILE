@@ -72,11 +72,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future _doLogin() async {
-    if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
-      Alert(context: context, title: "Data tidak benar", type: AlertType.error)
-          .show();
-      return;
-    }
+    // if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
+    //   Alert(context: context, title: "Data tidak benar", type: AlertType.error)
+    //       .show();
+    //   return;
+    // }
     // ProgressDialog progressDialog = new ProgressDialog(context);
     // progressDialog.style(message: "Loading......");
     // progressDialog.show();
