@@ -1,11 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
-
-import 'daftar_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -17,7 +14,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController txtUsername = new TextEditingController();
   TextEditingController txtPassword = new TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,23 +43,6 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: Text("Login", style: TextStyle(color: Colors.white)),
                   ),
-                ),
-                SizedBox(height: 10),
-                Text("Atau"),
-                ButtonTheme(
-                  minWidth: double.infinity,
-                  child: RaisedButton(
-                      onPressed: () {
-                        //yg baru
-                        Navigator.pushNamed(context, 'daftar_page');
-
-                        //yg lama
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => DaftarPage()));
-                      },
-                      child: Text("Daftar Disini")),
                 )
               ]))
         ],
@@ -77,20 +56,16 @@ class _LoginPageState extends State<LoginPage> {
           .show();
       return;
     }
-    // ProgressDialog progressDialog = new ProgressDialog(context);
-    // progressDialog.style(message: "Loading......");
-    // progressDialog.show();
-    final response = await http.post(Uri.http('192.168.1.75:8000', 'api/login'),
+
+    final response = await http.post(
+        Uri.http('http:192.168.137.19:8000', 'api/login'),
         body: {'email': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
-    // progressDialog.hide();
-
     if (response.statusCode == 200) {
-      var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
-      print(jsonResponse['data']['user']['email']);
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
           .show();
-    } else {
+
+    }else{
       Alert(context: context, title: "Login Gagal", type: AlertType.error)
           .show();
     }

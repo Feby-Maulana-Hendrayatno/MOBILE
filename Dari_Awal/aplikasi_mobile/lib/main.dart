@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/login_page.dart';
 
+import 'daftar_page.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,10 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      routes: {
+        'login_page' : (context) => LoginPage(),
+        'daftar_page' : (context) =>DaftarPage()
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      //yg baru onpresed
+      initialRoute: 'login_page',
+      
+
+      // yang lama
+      //home: LoginPage(),
     );
   }
 }
