@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-// import 'package:progress_dialog/progress_dialog.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -51,7 +51,6 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10),
                 Text("Atau"),
                 ButtonTheme(
-                  minWidth: double.infinity,
                   child: RaisedButton(
                       onPressed: () {
                         //yg baru
@@ -63,7 +62,11 @@ class _LoginPageState extends State<LoginPage> {
                         //     MaterialPageRoute(
                         //         builder: (context) => DaftarPage()));
                       },
-                      child: Text("Daftar Disini")),
+                      child: Text(
+                        "Daftar Disini",
+                        style: TextStyle(color : Colors.white),
+                      )
+                    ),
                 )
               ]))
         ],
@@ -72,18 +75,18 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future _doLogin() async {
-    // if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
-    //   Alert(context: context, title: "Data tidak benar", type: AlertType.error)
-    //       .show();
-    //   return;
-    // }
-    // ProgressDialog progressDialog = new ProgressDialog(context);
-    // progressDialog.style(message: "Loading......");
-    // progressDialog.show();
+    if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
+      Alert(context: context, title: "Data tidak benar", type: AlertType.error)
+          .show();
+      return;
+    }
+    ProgressDialog progressDialog = new ProgressDialog(context);
+    progressDialog.style(message: "Loading......");
+    progressDialog.show();
     final response = await http.post(Uri.http('192.168.1.75:8000', 'api/login'),
         body: {'email': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
-    // progressDialog.hide();
+    progressDialog.hide();
 
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
