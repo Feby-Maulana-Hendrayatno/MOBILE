@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:aplikasi_mobile/login_page.dart';
 import 'package:flutter/material.dart';
 // import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:intl/intl.dart';
@@ -34,7 +35,7 @@ class _DaftarPageState extends State<DaftarPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets(),
             child: Column(
               children: <Widget>[
                 Text("Pendaftaran"),
@@ -51,7 +52,7 @@ class _DaftarPageState extends State<DaftarPage> {
                   decoration: InputDecoration(hintText: "Password"),
                   obscureText: true,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 15),
                 //   RadioButtonGroup(
                 // labels: <String>[
                 //   "laki - Laki",
@@ -95,6 +96,10 @@ class _DaftarPageState extends State<DaftarPage> {
     String email = txtEmail.text;
     String password = txtPassword.text;
     String tanggalLahir = txtTanggalLahir.text;
+    // print(name);
+    // print(email);
+    // print(password);
+    // print(tanggalLahir);
     if (name.isEmpty || email.isEmpty) {
       Alert(
               context: context,
@@ -103,26 +108,53 @@ class _DaftarPageState extends State<DaftarPage> {
           .show();
       return;
     }
-    ProgressDialog progressDialog = new ProgressDialog(context);
+    ProgressDialog progressDialog = ProgressDialog(context);
     progressDialog.style(message: "Loading......");
     progressDialog.show();
-    final response = await http.post(Uri.http('192.168.1.75:8000', 'api/user'),
-        body: {
-          'name': name,
-          'email': email,
-          'password': password,
-          'tanggalLahir' : tanggalLahir,
-          },
-        headers: {'Accept': 'application/json'});
-    progressDialog.hide();
+    final response =
+        // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
+        await http.post(Uri.parse('http://192.168.43.29:8000/api/user'), body: {
+      'name': name,
+      'email': email,
+      'password': password,
+      'tanggal_lahir': tanggalLahir,
+    }, headers: {
+      'Accept': 'application/json'
+    });
 
+    progressDialog.hide();
+    print(response.statusCode);
+    print(response.body);
     if (response.statusCode == 201) {
       // var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
       // print(jsonResponse['data']['user']['email']);
-      Alert(context: context, title: "Data berhasil disimpan", type: AlertType.success)
-          .show();
+      Alert(
+          context: context,
+          title: "Data berhasil disimpan",
+          type: AlertType.success,
+          buttons: [
+            DialogButton(
+              child: Text("INPUT LAGI"),
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  txtName.text = "";
+                });
+              },
+            ),
+            DialogButton(
+              child: Text("LANJUT LOGIN"),
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+            )
+          ]).show();
     } else {
-        Alert(context: context, title: "Data Gagal disimpan", type: AlertType.error)
+      Alert(
+              context: context,
+              title: "Data Gagal disimpan",
+              type: AlertType.error)
           .show();
     }
   }

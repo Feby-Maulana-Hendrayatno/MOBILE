@@ -1,8 +1,9 @@
+import 'package:aplikasi_mobile/home.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/login_page.dart';
 
 import 'daftar_page.dart';
-
+import 'start_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,17 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       routes: {
-        'login_page' : (context) => LoginPage(),
-        'daftar_page' : (context) =>DaftarPage()
+        'login_page': (context) => LoginPage(),
+        'daftar_page': (context) => DaftarPage(),
+        'home_page': (context) => HomePage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       //yg baru onpresed
       initialRoute: 'login_page',
-      
 
       // yang lama
       //home: LoginPage(),
@@ -57,11 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("Saya belajar flutter"),
-            SizedBox(height:40,),
+            SizedBox(
+              height: 40,
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
-
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,

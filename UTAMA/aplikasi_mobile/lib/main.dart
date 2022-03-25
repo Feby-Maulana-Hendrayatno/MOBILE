@@ -86,7 +86,7 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
-                              color: Color.fromRGBO(143, 148, 251, .2),
+                              color: Color.fromARGB(51, 255, 34, 34),
                               blurRadius: 20.0,
                               offset: Offset(0, 10)
                             )
