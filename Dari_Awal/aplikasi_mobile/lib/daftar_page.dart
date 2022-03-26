@@ -35,7 +35,7 @@ class _DaftarPageState extends State<DaftarPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            padding: EdgeInsets(),
+            padding: EdgeInsets.only(),
             child: Column(
               children: <Widget>[
                 Text("Pendaftaran"),
