@@ -1,8 +1,9 @@
 import 'package:aplikasi_mobile/home.dart';
+import 'package:aplikasi_mobile/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/login_page.dart';
 
-import 'daftar_page.dart';
+//import '_page.dart';
 import 'start_page.dart';
 
 void main() => runApp(MyApp());
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       routes: {
+        'register_page' : (context) => RegisterPage(),
         'login_page': (context) => LoginPage(),
-        'daftar_page': (context) => DaftarPage(),
+        //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
       },
       theme: ThemeData(
