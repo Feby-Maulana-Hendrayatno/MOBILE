@@ -6,7 +6,8 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
 
-import 'daftar_page.dart';
+//import 'daftar_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -138,13 +139,13 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               //yg baru
                               // Navigator.pushNamed(context, 'daftar_page');
-                              Navigator.pushNamed(context, 'home_page');
+                              Navigator.pushNamed(context, 'register_page');
 
                               //yg lama
                               // Navigator.push(
                               //     context,
                               //     MaterialPageRoute(
-                              //         builder: (context) => DaftarPage()));
+                              //       builder:(context) => DaftarPage()));
                             },
                             child: Text(
                               "Daftar Disini",
