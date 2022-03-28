@@ -170,7 +170,8 @@ class _LoginPageState extends State<LoginPage> {
     progressDialog.style(message: "Loading......");
     progressDialog.show();
     final response = await http.post(
-        Uri.http('192.168.43.29:8000', 'api/login'),
+        Uri.http('AppConfig.getUrl()', 'api/login'),
+        // Uri.http('AppConfig.getUrl()'+ 'api/login'),
         body: {'email': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
     progressDialog.hide();

@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               options: CarouselOptions(
                   autoPlay: true,
                   aspectRatio: 2.0,
-                  viewportFraction: 0.85,
+                  viewportFraction: 0.7,
                   enlargeCenterPage: true,
                   autoPlayInterval: Duration(seconds: 3),
                   autoPlayAnimationDuration: Duration(milliseconds: 800),
