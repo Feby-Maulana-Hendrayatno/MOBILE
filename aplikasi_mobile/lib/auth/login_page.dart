@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Positioned(
                 right: 300,
-                top: 1,
+                top: 10,
                 width: 80,
                 height: 170,
                 child: Container(
@@ -79,13 +79,16 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
+                right: 100,
+                top: 40,
+                width: 300,
+                height: 350,
                 child: Container(
-                  margin: EdgeInsets.only(top: 50),
                   child: Center(
                     child: Text(
                       "Login",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromRGBO(201, 123, 44 ,1),
                           fontSize: 40,
                           fontWeight: FontWeight.bold),
                     ),
@@ -93,67 +96,109 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
-                  bottom: 10,
+                right: 210,
+                top: 0,
+                width: 140,
+                height: 1060,
+                child: Container(
+                  decoration: BoxDecoration(
+                  image: DecorationImage(
+                  image: AssetImage('assets/images/logo.png'))),
+                ),
+              ),
+              Positioned(
+                  top:200,
+                  // bottom: 10,
+                  left: 10,
                   child: Container(
-                    padding: EdgeInsets.all(20),
-                    height: 360,
-                    width: 350,
-                    // color: Colors.white,
+                    // padding: EdgeInsets.all(18),
+                    height: 100000,
+                    width: 340,
                     child: Column(children: <Widget>[
                       TextFormField(
                         controller: txtUsername,
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Masukan Username",
+                        decoration: new InputDecoration(
+                            hintText: "masukan nama lengkap anda",
+                            labelText: "Nama Lengkap",
+                            icon: Icon(Icons.people),
+                            border: OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0)),
                             hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                // fontWeight: FontWeight.bold,
-                                // height: 5,
-                                fontSize: 20)),
+                                color: Color.fromARGB(255, 223, 151, 70),
+                                fontSize: 14)),
+                        autofocus: true,
                       ),
+                      SizedBox(height: 30),
                       TextFormField(
                         controller: txtPassword,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            hintText: "Masukan Password",
+                        decoration: new InputDecoration(
+                            hintText: "masukan password",
+                            labelText: "Pasword",
+                            icon: Icon(Icons.password_outlined),
+                            border: OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0)),
                             hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                // fontWeight: FontWeight.bold,
-                                // height: 5,
-                                fontSize: 20)),
+                                color: Color.fromARGB(255, 223, 151, 70),
+                                fontSize: 14)),
+                        obscureText: true,
+                        autofocus: true,
                       ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 54, 73, 244)),
-                        onPressed: () {
-                          this._doLogin();
-                        },
-                        child: Text("Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                            )),
+                      SizedBox(height: 20),
+                      Container(
+                        margin: EdgeInsets.only(
+                            left: 210.0, top: 100.0, right: 1.0, bottom: 1.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 141, 130, 130)),
+                          onPressed: () {
+                            this._doLogin();
+                          },
+                          child: Text("Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                              )),
+                        ),
                       ),
-                      SizedBox(height: 10),
-                      Text("Atau"),
-                      ButtonTheme(
-                        child: RaisedButton(
-                            onPressed: () {
-                              //yg baru
-                              Navigator.pushNamed(context, 'register_page');
-                              // Navigator.pushNamed(context, 'home_page');
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(
+                              left: 1.0, top:5 , right: 1.0, bottom: 0
+                            ),
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle: const TextStyle(fontSize: 20,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.pushNamed(context, 'register_page');
+                              },
+                              child: const Text('Tidak Punya Akun', style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
+                            ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(
+                                left: 1.0, top:5 , right: 1.0, bottom: 0
+                              ),
+                              child: TextButton(
+                              style: TextButton.styleFrom(
+                                textStyle: const TextStyle(fontSize: 20,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.pushNamed(context, 'register_page');
+                              },
+                              child: const Text('Daftar', style: TextStyle(color: Color.fromARGB(255, 187, 164, 38))),
+                            ),
 
-                              //yg lama
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => DaftarPage()));
-                            },
-                            child: Text(
-                              "Daftar Disini",
-                              style: TextStyle(color: Colors.white),
-                            )),
-                      )
+                            ),                          
+                        ],
+                      ),
                     ]),
-                  )),
+                  )),            
             ],
           ),
         ),

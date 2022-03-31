@@ -12,7 +12,6 @@ import 'package:http/http.dart' as http;
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'login_page.dart';
 
-
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
 
@@ -31,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final format = DateFormat("yyyy-MM-dd");
     return Scaffold(
       //appBar: AppBar(
-        //  title: Text("Halaman Daftar"),
+      //  title: Text("Halaman Daftar"),
       //),
       body: SingleChildScrollView(
         child: Container(
@@ -64,6 +63,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               Positioned(
+                right: 210,
+                top: 0,
+                width: 140,
+                height: 1060,
+                child: Container(
+                  decoration: BoxDecoration(
+                  image: DecorationImage(
+                  image: AssetImage('assets/images/logo.png'))),
+                ),
+              ),
+              Positioned(
                 right: 300,
                 top: 1,
                 width: 80,
@@ -87,7 +97,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               Positioned(
                 child: Container(
-                  margin: EdgeInsets.only(top: 50),
+                  // margin: EdgeInsets.only(top: 10),
                   child: Center(
                     child: Text(
                       "Login",
@@ -99,89 +109,104 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              
               Positioned(
-                  bottom: 10,
+                  bottom: 20,
+                  left: 10,
                   child: Container(
-                    padding: EdgeInsets.all(20),
-                    height: 360,
-                    width: 350,
+                    padding: EdgeInsets.all(18),
+                    height: 440,
+                    width: 340,
                     child: Column(children: <Widget>[
                       TextFormField(
                         controller: txtName,
                         decoration: new InputDecoration(
-                        hintText: "masukan nama lengkap anda",
-                        labelText: "Nama Lengkap",
-                        icon: Icon(Icons.people),
-                        border: OutlineInputBorder(
-                        borderRadius: new BorderRadius.circular(5.0)),
-                        hintStyle: GoogleFonts.oswald(
-                        color: Color.fromARGB(255, 223, 151, 70),
-                        fontSize: 14)),
+                            hintText: "masukan nama lengkap anda",
+                            labelText: "Nama Lengkap",
+                            icon: Icon(Icons.people),
+                            border: OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0)),
+                            hintStyle: GoogleFonts.oswald(
+                                color: Color.fromARGB(255, 223, 151, 70),
+                                fontSize: 14)),
                         autofocus: true,
                       ),
-
+                      SizedBox(height: 12),
                       TextFormField(
                         controller: txtEmail,
                         decoration: new InputDecoration(
-                        hintText: "masukan email anda",
-                        labelText: "Email",
-                        icon: Icon(Icons.message),
-                        border: OutlineInputBorder(
-                        borderRadius: new BorderRadius.circular(5.0)),
-                        hintStyle: GoogleFonts.oswald(
-                        color: Color.fromARGB(255, 223, 151, 70),
-                        fontSize: 14)),
+                            hintText: "masukan email anda",
+                            labelText: "Email",
+                            icon: Icon(Icons.message),
+                            border: OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0)),
+                            hintStyle: GoogleFonts.oswald(
+                                color: Color.fromARGB(255, 223, 151, 70),
+                                fontSize: 14)),
                         autofocus: true,
                       ),
-
+                      SizedBox(height: 15),
                       TextFormField(
                         controller: txtPassword,
                         decoration: new InputDecoration(
-                        hintText: "masukan password",
-                        labelText: "Pasword",
-                        icon: Icon(Icons.password_outlined),
-                        border: OutlineInputBorder(
-                        borderRadius: new BorderRadius.circular(5.0)),
-                        hintStyle: GoogleFonts.oswald(
-                        color: Color.fromARGB(255, 223, 151, 70),
-                        fontSize: 14)),
+                            hintText: "masukan password",
+                            labelText: "Pasword",
+                            icon: Icon(Icons.password_outlined),
+                            border: OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0)),
+                            hintStyle: GoogleFonts.oswald(
+                                color: Color.fromARGB(255, 223, 151, 70),
+                                fontSize: 14)),
                         obscureText: true,
                         autofocus: true,
                       ),
-
+                      SizedBox(height: 15),
                       DateTimeField(
-                    controller: txtTanggalLahir,
-                    decoration: new InputDecoration(
-                        hintText: "masukan tgl lahir anda",
-                        labelText: "Tgl Lahir",
-                        icon: Icon(Icons.date_range),
-                        border: OutlineInputBorder(
-                        borderRadius: new BorderRadius.circular(5.0)),
-                        hintStyle: GoogleFonts.oswald(
-                        color: Color.fromARGB(255, 223, 151, 70),
-                        fontSize: 14)),
-                        autofocus: true,
-                    format: format,
-                    onShowPicker: (context, currentValue) {
-                      return showDatePicker(
-                          context: context,
-                          firstDate: DateTime(1970),
-                          initialDate:currentValue ?? DateTime.now(),
-                          lastDate: DateTime(2100));
-                    }),
-
-
-                      ButtonTheme(
-                        minWidth: double.infinity,
-                        child: RaisedButton(
-                          child: Text("Daftar Sekarang",
-                              style: TextStyle(color: Colors.white)),
+                          controller: txtTanggalLahir,
+                          decoration: new InputDecoration(
+                              hintText: "masukan tgl lahir anda",
+                              labelText: "Tgl Lahir",
+                              icon: Icon(Icons.date_range),
+                              border: OutlineInputBorder(
+                                  borderRadius: new BorderRadius.circular(8.0)),
+                              hintStyle: GoogleFonts.oswald(
+                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  fontSize: 14)),
+                          autofocus: true,
+                          format: format,
+                          onShowPicker: (context, currentValue) {
+                            return showDatePicker(
+                                context: context,
+                                firstDate: DateTime(1970),
+                                initialDate: currentValue ?? DateTime.now(),
+                                lastDate: DateTime(2100));
+                          }),
+                      SizedBox(height: 50),
+                      Container(
+                        margin: EdgeInsets.only(
+                            left: 180.0, top: 18.0, right: 1.0, bottom: 1.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 141, 130, 130)),
                           onPressed: () {
-                                  this._doDaftar();
-                                },
+                            this._doDaftar();
+                          },
+                          child: Text("Register",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                              )),
                         ),
                       ),
+                      // ButtonTheme(
+                      //   minWidth: double.infinity,
+                      //   child: RaisedButton(
+                      //     child: Text("Daftar Sekarang",
+                      //         style: TextStyle(color: Colors.white)),
+                      //     onPressed: () {
+                      //       this._doDaftar();
+                      //     },
+                      //   ),
+                      // ),
                     ]),
                   )),
             ],
