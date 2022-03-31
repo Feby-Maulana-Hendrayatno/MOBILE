@@ -1,10 +1,11 @@
-import 'package:aplikasi_mobile/home.dart';
-import 'package:aplikasi_mobile/register_page.dart';
+import 'package:aplikasi_mobile/page/chat_page.dart';
+import 'package:aplikasi_mobile/page/home.dart';
+import 'package:aplikasi_mobile/auth/register_page.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikasi_mobile/login_page.dart';
+import 'package:aplikasi_mobile/auth/login_page.dart';
 
 //import '_page.dart';
-import 'start_page.dart';
+import 'page/start_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         'login_page': (context) => LoginPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
+        'chat_page': (context) => ChatPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
