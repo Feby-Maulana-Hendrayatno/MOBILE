@@ -9,7 +9,6 @@ import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
-
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: ChatPage(),
