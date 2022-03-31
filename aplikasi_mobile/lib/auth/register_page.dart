@@ -70,7 +70,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Container(
                   decoration: BoxDecoration(
                   image: DecorationImage(
-                  image: AssetImage('assets/images/logo.png'))),
+                  image: AssetImage('assets/images/logo.png'))
+                  ),
                 ),
               ),
               Positioned(
@@ -81,7 +82,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/images/light-1.png'))),
+                          image: AssetImage('assets/images/light-1.png'))
+                  ),
                 ),
               ),
               Positioned(
@@ -92,7 +94,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/images/clock.png'))),
+                          image: AssetImage('assets/images/clock.png'))
+                  ),
                 ),
               ),
               Positioned(
@@ -149,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: txtPassword,
                         decoration: new InputDecoration(
                             hintText: "masukan password",
-                            labelText: "Pasword",
+                            labelText: "Password",
                             icon: Icon(Icons.password_outlined),
                             border: OutlineInputBorder(
                                 borderRadius: new BorderRadius.circular(8.0)),
@@ -163,7 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       DateTimeField(
                           controller: txtTanggalLahir,
                           decoration: new InputDecoration(
-                              hintText: "masukan tgl lahir anda",
+                              hintText: "masukan tanggal lahir anda",
                               labelText: "Tgl Lahir",
                               icon: Icon(Icons.date_range),
                               border: OutlineInputBorder(
