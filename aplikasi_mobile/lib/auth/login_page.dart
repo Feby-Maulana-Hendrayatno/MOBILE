@@ -17,8 +17,56 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController txtUsername = new TextEditingController();
   TextEditingController txtPassword = new TextEditingController();
+  TextEditingController txtUsername = new TextEditingController();
+
+  Future _doLogin() async {
+    if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
+      Alert(context: context, title: "Data tidak benar", type: AlertType.error)
+          .show();
+      return;
+    }
+    ProgressDialog progressDialog = new ProgressDialog(context);
+    progressDialog.style(message: "Loading......");
+    progressDialog.show();
+    //VERSI LAMA BRO
+    // final response = await http.post(
+    //     Uri.http('192.168.1.11:8000', 'api/login'),
+    //     body: {'email': txtUsername.text, 'password': txtPassword.text},
+    //     headers: {'Accept': 'application/json'});
+    final response =
+        // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
+        await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
+      'email': txtUsername.text,
+      'password': txtPassword.text,
+    }, headers: {
+      'Accept': 'application/json'
+    });
+    progressDialog.hide();
+
+    if (response.statusCode == 200) {
+      var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
+      print(jsonResponse['data']['user']['email']);
+      // Alert(context: context, title: "Login Berhasil", type: AlertType.success)
+      //     .show();
+
+      Alert(
+          context: context,
+          title: "Login Berhasil",
+          type: AlertType.success,
+          buttons: [
+            DialogButton(
+              child: Text("Ok"),
+              onPressed: () {
+                Navigator.pushNamed(context, 'home_page');
+              },
+            )
+          ]).show();
+    } else {
+      Alert(context: context, title: "Login Gagal", type: AlertType.error)
+          .show();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +155,48 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Positioned(
-                  top:200,
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 20, top:580 , right: 0, bottom: 0
+                  ),
+                  child: TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle(fontSize: 20,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'register_page');
+                  },
+                  child: const Text('Daftar', style: TextStyle(color: Color.fromARGB(255, 187, 164, 38))),
+                ),
+                ),
+              ),
+              Positioned(
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 0, top:580 , right: 200, bottom: 0
+                  ),
+                  child: TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle(fontSize: 20,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'register_page');
+                  },
+                  child: const Text('Tidak Punya Akun', style: TextStyle(color: Color.fromARGB(255, 3, 1, 1))),
+                ),
+                ),
+              ),
+
+              Positioned(
+                  top:290,
                   // bottom: 10,
                   left: 10,
                   child: Container(
                     // padding: EdgeInsets.all(18),
-                    height: 100000,
                     width: 340,
                     child: Column(children: <Widget>[
                       TextFormField(
@@ -146,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 20),
                       Container(
                         margin: EdgeInsets.only(
-                            left: 210.0, top: 100.0, right: 1.0, bottom: 1.0),
+                            left: 220.0, top: 80, right: 1.0, bottom: 1.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: Color.fromARGB(255, 141, 130, 130)),
@@ -160,43 +244,6 @@ class _LoginPageState extends State<LoginPage> {
                               )),
                         ),
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(
-                              left: 1.0, top:5 , right: 1.0, bottom: 0
-                            ),
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                textStyle: const TextStyle(fontSize: 20,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                ),
-                              ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'register_page');
-                              },
-                              child: const Text('Tidak Punya Akun', style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
-                            ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                left: 1.0, top:5 , right: 1.0, bottom: 0
-                              ),
-                              child: TextButton(
-                              style: TextButton.styleFrom(
-                                textStyle: const TextStyle(fontSize: 20,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                ),
-                              ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'register_page');
-                              },
-                              child: const Text('Daftar', style: TextStyle(color: Color.fromARGB(255, 187, 164, 38))),
-                            ),
-
-                            ),                          
-                        ],
-                      ),
                     ]),
                   )),            
             ],
@@ -204,53 +251,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  Future _doLogin() async {
-    if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
-      Alert(context: context, title: "Data tidak benar", type: AlertType.error)
-          .show();
-      return;
-    }
-    ProgressDialog progressDialog = new ProgressDialog(context);
-    progressDialog.style(message: "Loading......");
-    progressDialog.show();
-    //VERSI LAMA BRO
-    // final response = await http.post(
-    //     Uri.http('192.168.1.11:8000', 'api/login'),
-    //     body: {'email': txtUsername.text, 'password': txtPassword.text},
-    //     headers: {'Accept': 'application/json'});
-    final response =
-        // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
-        await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
-      'email': txtUsername.text,
-      'password': txtPassword.text,
-    }, headers: {
-      'Accept': 'application/json'
-    });
-    progressDialog.hide();
-
-    if (response.statusCode == 200) {
-      var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
-      print(jsonResponse['data']['user']['email']);
-      // Alert(context: context, title: "Login Berhasil", type: AlertType.success)
-      //     .show();
-
-      Alert(
-          context: context,
-          title: "Login Berhasil",
-          type: AlertType.success,
-          buttons: [
-            DialogButton(
-              child: Text("Ok"),
-              onPressed: () {
-                Navigator.pushNamed(context, 'home_page');
-              },
-            )
-          ]).show();
-    } else {
-      Alert(context: context, title: "Login Gagal", type: AlertType.error)
-          .show();
-    }
   }
 }
