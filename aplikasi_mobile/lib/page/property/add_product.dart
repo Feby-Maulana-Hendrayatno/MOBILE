@@ -4,6 +4,7 @@ import 'package:aplikasi_mobile/page/property/property.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+
 class AddProduct extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _nameController = new TextEditingController();
