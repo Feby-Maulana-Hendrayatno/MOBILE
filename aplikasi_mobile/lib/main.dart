@@ -2,6 +2,7 @@ import 'package:aplikasi_mobile/page/chat_page.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
+import 'package:aplikasi_mobile/page/property/property.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/auth/login_page.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
         'chat_page': (context) => ChatPage(),
+        'property_page' : (context) => PropertyPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
