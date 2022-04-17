@@ -1,4 +1,5 @@
 import 'package:aplikasi_mobile/page/chat_page.dart';
+import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'register_page' : (context) => RegisterPage(),
         'login_page': (context) => LoginPage(),
+        'detail_page': (context) => DetailPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
         'chat_page': (context) => ChatPage(),
