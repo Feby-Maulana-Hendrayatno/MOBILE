@@ -5,7 +5,7 @@ import 'package:aplikasi_mobile/page/property/detail_property.dart';
 import 'package:aplikasi_mobile/page/property/edit_proprty.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class PropertyPage extends StatefulWidget {
   const PropertyPage({
