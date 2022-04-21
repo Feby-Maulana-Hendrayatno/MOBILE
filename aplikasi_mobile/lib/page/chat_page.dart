@@ -5,7 +5,7 @@ import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -146,8 +146,8 @@ class itemChat extends StatelessWidget {
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                         bottomLeft: Radius.circular(15),
-                      ):
-                      BorderRadius.only(
+                      )
+                    : BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                         bottomRight: Radius.circular(15)),
@@ -164,7 +164,5 @@ class itemChat extends StatelessWidget {
       ),
       alignment: isSender ? Alignment.centerRight : Alignment.centerLeft,
     );
-  
   }
 }
-

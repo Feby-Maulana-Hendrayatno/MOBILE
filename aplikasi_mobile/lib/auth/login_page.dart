@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
@@ -26,9 +26,9 @@ class _LoginPageState extends State<LoginPage> {
           .show();
       return;
     }
-    ProgressDialog progressDialog = new ProgressDialog(context);
-    progressDialog.style(message: "Loading......");
-    progressDialog.show();
+    // ProgressDialog progressDialog = new ProgressDialog(context);
+    // progressDialog.style(message: "Loading......");
+    // progressDialog.show();
     //VERSI LAMA BRO
     // final response = await http.post(
     //     Uri.http('192.168.1.11:8000', 'api/login'),
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
     }, headers: {
       'Accept': 'application/json'
     });
-    progressDialog.hide();
+    // progressDialog.hide();
 
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       "Login",
                       style: TextStyle(
-                          color: Color.fromRGBO(201, 123, 44 ,1),
+                          color: Color.fromRGBO(201, 123, 44, 1),
                           fontSize: 40,
                           fontWeight: FontWeight.bold),
                     ),
@@ -150,49 +150,51 @@ class _LoginPageState extends State<LoginPage> {
                 height: 1060,
                 child: Container(
                   decoration: BoxDecoration(
-                  image: DecorationImage(
-                  image: AssetImage('assets/images/logo.png'))),
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/logo.png'))),
                 ),
               ),
               Positioned(
                 child: Container(
-                  margin: EdgeInsets.only(
-                    left: 20, top:580 , right: 0, bottom: 0
-                  ),
+                  margin:
+                      EdgeInsets.only(left: 20, top: 580, right: 0, bottom: 0),
                   child: TextButton(
-                  style: TextButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 20,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'register_page');
+                    },
+                    child: const Text('Daftar',
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 187, 164, 38))),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'register_page');
-                  },
-                  child: const Text('Daftar', style: TextStyle(color: Color.fromARGB(255, 187, 164, 38))),
-                ),
                 ),
               ),
               Positioned(
                 child: Container(
-                  margin: EdgeInsets.only(
-                    left: 0, top:580 , right: 200, bottom: 0
-                  ),
+                  margin:
+                      EdgeInsets.only(left: 0, top: 580, right: 200, bottom: 0),
                   child: TextButton(
-                  style: TextButton.styleFrom(
-                    textStyle: const TextStyle(fontSize: 20,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                    style: TextButton.styleFrom(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'property_page');
+                    },
+                    child: const Text('Tidak Punya Akun',
+                        style: TextStyle(color: Color.fromARGB(255, 3, 1, 1))),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'property_page');
-                  },
-                  child: const Text('Tidak Punya Akun', style: TextStyle(color: Color.fromARGB(255, 3, 1, 1))),
-                ),
                 ),
               ),
-
               Positioned(
-                  top:290,
+                  top: 290,
                   // bottom: 10,
                   left: 10,
                   child: Container(
@@ -245,7 +247,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ]),
-                  )),            
+                  )),
             ],
           ),
         ),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -108,9 +108,9 @@ class _DaftarPageState extends State<DaftarPage> {
           .show();
       return;
     }
-    ProgressDialog progressDialog = ProgressDialog(context);
-    progressDialog.style(message: "Loading......");
-    progressDialog.show();
+    // ProgressDialog progressDialog = ProgressDialog(context);
+    // progressDialog.style(message: "Loading......");
+    // progressDialog.show();
     final response =
         // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
         await http.post(Uri.parse('http://192.168.43.29:8000/api/user'), body: {
@@ -122,7 +122,7 @@ class _DaftarPageState extends State<DaftarPage> {
       'Accept': 'application/json'
     });
 
-    progressDialog.hide();
+    // progressDialog.hide();
     print(response.statusCode);
     print(response.body);
     if (response.statusCode == 201) {

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
@@ -7,7 +5,7 @@ import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -30,11 +28,15 @@ class _DetailPageState extends State<DetailPage> {
       backgroundColor: Colors.white,
       bottomNavigationBar: Container(
         height: 50,
-        alignment : Alignment.center,
+        alignment: Alignment.center,
         margin: EdgeInsets.symmetric(horizontal: 32),
-        decoration: BoxDecoration(color: Colors.amber, borderRadius: BorderRadius.only(topLeft: Radius.circular(28),
-        topRight: Radius.circular(28), 
-        ),),
+        decoration: BoxDecoration(
+          color: Colors.amber,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(28),
+            topRight: Radius.circular(28),
+          ),
+        ),
         child: Text(
           "Hubungi Penjual",
           style: TextStyle(
