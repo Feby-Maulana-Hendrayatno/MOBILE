@@ -1,3 +1,5 @@
+import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
         'home_page': (context) => HomePage(),
         'chat_page': (context) => ChatPage(),
         'property_page': (context) => PropertyPage(),
+        'navigasi_page': (context) => Navigasi(),
+        "profile_page": (context) => ProfilePage(),
       },
 
       theme: ThemeData(
@@ -60,22 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final items = <Widget>[
-      Icon(Icons.home, size: 30),
-      Icon(Icons.search, size: 30),
-      Icon(Icons.favorite, size: 30),
-      Icon(Icons.settings, size: 30),
-      Icon(Icons.person, size: 30),
-    ];
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Text("Kelompok 4"),
         elevation: 0,
         centerTitle: true,
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        items: items,
       ),
       body: Center(
         child: Column(
