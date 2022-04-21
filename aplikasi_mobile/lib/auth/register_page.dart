@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:sn_progress_dialog/progress_dialog.dart';
+// import 'package:sn_progress_dialog/progress_dialog.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
@@ -232,8 +232,8 @@ class _RegisterPageState extends State<RegisterPage> {
           .show();
       return;
     }
-    ProgressDialog progressDialog = ProgressDialog(context: context);
-    progressDialog.show(msg: "Loading......", max: 100);
+    // ProgressDialog progressDialog = ProgressDialog(context: context);
+    // progressDialog.show(msg: "Loading......", max: 100);
     final response =
         // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
         await http.post(Uri.parse(AppConfig.getUrl() + 'user'), body: {
@@ -245,7 +245,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'Accept': 'application/json'
     });
 
-    progressDialog.close();
+    // progressDialog.close();
     print(response.statusCode);
     print(response.body);
     if (response.statusCode == 201) {

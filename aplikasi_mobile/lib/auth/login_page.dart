@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:flutter/material.dart';
-import 'package:sn_progress_dialog/progress_dialog.dart';
+// import 'package:sn_progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
@@ -26,8 +26,8 @@ class _LoginPageState extends State<LoginPage> {
           .show();
       return;
     }
-    ProgressDialog progressDialog = ProgressDialog(context: context);
-    progressDialog.show(msg: "Loading......", max: 100);
+    // ProgressDialog progressDialog = ProgressDialog(context: context);
+    // progressDialog.show(msg: "Loading......", max: 100);
     //VERSI LAMA BRO
     // final response = await http.post(
     //     Uri.http('192.168.1.11:8000', 'api/login'),
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
     }, headers: {
       'Accept': 'application/json'
     });
-    progressDialog.close();
+    // progressDialog.close();
 
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
