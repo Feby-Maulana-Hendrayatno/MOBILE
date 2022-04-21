@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-// import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:sn_progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -21,7 +21,8 @@ class _StartPageState extends State<Start> {
     return Scaffold(
       appBar: AppBar(title: Text('Halaman Mulai')),
     );
-    body: Column(children: <Widget>[
+    body:
+    Column(children: <Widget>[
       Container(
           child: Column(children: <Widget>[
         TextFormField(
@@ -31,5 +32,3 @@ class _StartPageState extends State<Start> {
     ]);
   }
 }
-
-
