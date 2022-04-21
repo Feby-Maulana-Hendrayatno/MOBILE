@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,8 +22,18 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    final items = <Widget>[
+      Icon(Icons.home, size:30),
+      Icon(Icons.search, size:30),
+      Icon(Icons.favorite, size:30),
+      Icon(Icons.settings, size:30),
+      Icon(Icons.person, size:30),
+    ];
     return Scaffold(
       appBar: AppBar(title: Text('Complicated image slider demo')),
+      bottomNavigationBar: CurvedNavigationBar(
+        items: items,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

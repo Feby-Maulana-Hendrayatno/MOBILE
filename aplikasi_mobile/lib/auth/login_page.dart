@@ -185,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'property_page');
+                      Navigator.pushNamed(context, 'home_page');
                     },
                     child: const Text('Tidak Punya Akun',
                         style: TextStyle(color: Color.fromARGB(255, 3, 1, 1))),
