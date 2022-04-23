@@ -26,13 +26,11 @@ static String routeName = "/profile";
           ),
           fillColor: Colors.white30,
           filled: true,
-    
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide.none
-          )
+          ),
         ),
-    
       ),
     );
   }
@@ -44,7 +42,7 @@ static String routeName = "/profile";
       backgroundColor: Color(0xff555555),
       leading: IconButton(icon: Icon(Icons.arrow_back),
       onPressed: () {},
-      ),
+        ),
       ),
       body: Stack(alignment: Alignment.center,
       children: [
@@ -80,11 +78,11 @@ static String routeName = "/profile";
                         child: Text("Update", style: TextStyle(
                           fontSize: 23,
                           color: Colors.white,
-                        )),
-
+                          ),
+                        ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -108,7 +106,7 @@ static String routeName = "/profile";
             letterSpacing:1.5,
             color: Colors.white,
             fontWeight: FontWeight.w600,
-            )
+            ),
             ),
             ),
             Container(
@@ -124,7 +122,7 @@ static String routeName = "/profile";
                   image: AssetImage('images/profile.png'),
                   ),
               ),
-            )
+            ),
           ],
         ),
         Padding(padding: EdgeInsets.only(bottom: 270, left: 184),
