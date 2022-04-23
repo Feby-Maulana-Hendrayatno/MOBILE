@@ -1,3 +1,5 @@
+import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
@@ -5,6 +7,7 @@ import 'package:aplikasi_mobile/auth/register_page.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/auth/login_page.dart';
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 //import '_page.dart';
 import 'page/start_page.dart';
@@ -19,14 +22,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       routes: {
-        'register_page' : (context) => RegisterPage(),
+        'register_page': (context) => RegisterPage(),
         'login_page': (context) => LoginPage(),
         'detail_page': (context) => DetailPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
         'chat_page': (context) => ChatPage(),
-        'property_page' : (context) => PropertyPage(),
+        'property_page': (context) => PropertyPage(),
+        'navigasi_page': (context) => Navigasi(),
+        "profile_page": (context) => ProfilePage(),
       },
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -59,8 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Text("Kelompok 4"),
+        elevation: 0,
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -80,11 +89,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

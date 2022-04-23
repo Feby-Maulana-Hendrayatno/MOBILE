@@ -2,12 +2,10 @@ import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:flutter/material.dart';
-// import 'package:sn_progress_dialog/progress_dialog.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:http/http.dart' as http;
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'daftar_page.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -185,7 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'property_page');
+                      Navigator.pushNamed(context, 'navigasi_page');
                     },
                     child: const Text('Tidak Punya Akun',
                         style: TextStyle(color: Color.fromARGB(255, 3, 1, 1))),

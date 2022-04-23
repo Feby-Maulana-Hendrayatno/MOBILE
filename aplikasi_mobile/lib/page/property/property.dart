@@ -5,6 +5,7 @@ import 'package:aplikasi_mobile/page/property/detail_property.dart';
 import 'package:aplikasi_mobile/page/property/edit_proprty.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class PropertyPage extends StatefulWidget {
   const PropertyPage({
@@ -16,6 +17,12 @@ class PropertyPage extends StatefulWidget {
 }
 
 class _PropertyPageState extends State<PropertyPage> {
+  // final navigationKey = GlobalKey<CurvedNavigationBarState>();
+  // int index = 2;
+  // final screens = [
+  //   PropertyPage(),
+  //   AddProduct(),
+  // ];
   final String url = 'http://192.168.1.15:8000/api/propertys';
 
   Future getProducts() async {
@@ -33,8 +40,31 @@ class _PropertyPageState extends State<PropertyPage> {
 
   @override
   Widget build(BuildContext context) {
+    final items = <Widget>[
+      Icon(Icons.home, size: 30),
+      Icon(Icons.search, size: 30),
+      Icon(Icons.favorite, size: 30),
+      Icon(Icons.settings, size: 30),
+      Icon(Icons.person, size: 30),
+    ];
     getProducts();
     return Scaffold(
+        // bottomNavigationBar: Theme(
+        //   data: Theme.of(context).copyWith(
+        //       iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0))),
+        //   child: CurvedNavigationBar(
+        //     key: navigationKey,
+        //     color: Color.fromARGB(255, 46, 161, 255),
+        //     buttonBackgroundColor: Color.fromARGB(255, 255, 255, 255),
+        //     // backgroundColor: Colors.transparent,
+        //     items: items,
+        //     height: 60,
+        //     animationCurve: Curves.easeInOut,
+        //     animationDuration: Duration(milliseconds: 650),
+        //     index: index,
+        //     onTap: (index) => setState(() => this.index = index),
+        //   ),
+        // ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
@@ -43,7 +73,8 @@ class _PropertyPageState extends State<PropertyPage> {
           child: Icon(Icons.add),
         ),
         appBar: AppBar(
-          title: Text("Prperty"),
+          title: Text("Property"),
+          backgroundColor: Colors.amber,
         ),
         body: FutureBuilder(
             future: getProducts(),
@@ -58,6 +89,7 @@ class _PropertyPageState extends State<PropertyPage> {
                           elevation: 5,
                           child: Row(
                             children: [
+                              
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(
@@ -133,14 +165,13 @@ class _PropertyPageState extends State<PropertyPage> {
                                                               ['id']
                                                           .toString())
                                                       .then((value) {
-                                                        setState(() {
-                                                          
-                                                        });
-                                                        ScaffoldMessenger.of(context)
-                                                      .showSnackBar(SnackBar(
-                                                    content: Text(
-                                                        "Product berhasil di Hapus"),
-                                                  ));
+                                                    setState(() {});
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(SnackBar(
+                                                      content: Text(
+                                                          "Product berhasil di Hapus"),
+                                                    ));
                                                   });
                                                 },
                                                 child: Icon(

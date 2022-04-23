@@ -146,8 +146,8 @@ class itemChat extends StatelessWidget {
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                         bottomLeft: Radius.circular(15),
-                      ):
-                      BorderRadius.only(
+                      )
+                    : BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15),
                         bottomRight: Radius.circular(15)),
@@ -164,7 +164,5 @@ class itemChat extends StatelessWidget {
       ),
       alignment: isSender ? Alignment.centerRight : Alignment.centerLeft,
     );
-  
   }
 }
-
