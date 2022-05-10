@@ -1,33 +1,31 @@
 import 'dart:convert';
-// import 'dart:html';
 
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  // const ProfilePage({ Key? key }) : super(key: key);
 
 final String url = 'http://192.168.1.15:8000/api/propertys';
 static String routeName = "/profile";
 
   Widget textfield({required String hintText}){
     return Material(
-      elevation: 4,
-      shadowColor: Colors.brown[300],
+      elevation: 3,
+      shadowColor: Colors.brown[100],
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(3),
       ),
           child: TextField(
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
-            letterSpacing: 2,
+            letterSpacing: 1.5,
             color: Colors.black54,
             fontWeight: FontWeight.bold,
           ),
-          fillColor: Colors.white30,
+          fillColor: Colors.white,
           filled: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(7),
             borderSide: BorderSide.none
           ),
         ),
@@ -39,7 +37,7 @@ static String routeName = "/profile";
     return Scaffold(
       appBar: AppBar(
       elevation: 0.0,
-      backgroundColor: Color(0xff555555),
+      backgroundColor: Colors.brown[200],
       leading: IconButton(icon: Icon(Icons.arrow_back),
       onPressed: () {},
         ),
@@ -50,9 +48,9 @@ static String routeName = "/profile";
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: 450,
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              height: 330,
+              width: 330,
+              margin: EdgeInsets.symmetric(horizontal: 2),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -69,11 +67,11 @@ static String routeName = "/profile";
                     hintText: 'Confirm password', 
                   ),
                   Container(
-                    height: 55,
+                    height: 35,
                     width: double.infinity,
                     child: RaisedButton(
                       onPressed: (){},
-                      color: Colors.black54,
+                      color: Colors.black12,
                       child: Center(
                         child: Text("Update", style: TextStyle(
                           fontSize: 23,
@@ -98,28 +96,28 @@ static String routeName = "/profile";
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(2),
             child: Text(
             "Profile",
             style: TextStyle(
             fontSize: 35,
-            letterSpacing:1.5,
+            letterSpacing: 2,
             color: Colors.white,
             fontWeight: FontWeight.w600,
             ),
             ),
             ),
             Container(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(2),
               width: MediaQuery.of(context).size.width/2,
               height: MediaQuery.of(context).size.width/2,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 5),
+                border: Border.all(color: Colors.grey.shade300, width: 3),
                 shape: BoxShape.circle,
                 color: Colors.white,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('images/profile.png'),
+                  image: AssetImage('package:images/profile.png'),
                   ),
               ),
             ),
@@ -147,7 +145,7 @@ class HeaderCurvedContainer extends CustomPainter{
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint= Paint()..color=Color(0xff555555);
+    Paint paint= Paint()..color=Colors.brown.shade200;
     Path path= Path()
     ..relativeLineTo(0, 150)
     ..quadraticBezierTo(size.width/2, 225, size.width, 150)
