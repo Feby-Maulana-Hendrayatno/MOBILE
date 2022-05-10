@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -50,7 +49,7 @@ static String routeName = "/profile";
             Container(
               height: 330,
               width: 330,
-              margin: EdgeInsets.symmetric(horizontal: 2),
+              margin: EdgeInsets.symmetric(horizontal: 5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -117,7 +116,7 @@ static String routeName = "/profile";
                 color: Colors.white,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('package:images/profile.png'),
+                  image: AssetImage('assets/images/profile.png'),
                   ),
               ),
             ),

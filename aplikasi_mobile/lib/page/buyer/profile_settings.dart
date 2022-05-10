@@ -12,7 +12,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
 
 final String url = 'http://192.168.1.15:8000/api/propertys';
-static String routeName = "/profile_settings";
+static String routeName = "/profile";
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
