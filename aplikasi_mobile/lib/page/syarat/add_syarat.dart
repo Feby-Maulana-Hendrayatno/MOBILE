@@ -11,7 +11,7 @@ class AddSyarat extends StatelessWidget {
 
   Future saveProduct() async {
     final response = await http
-        .post(Uri.parse("http://192.168.1.15:8000/api/propertys"), body: {
+        .post(Uri.parse("http://10.5.50.224:8000/api/propertys"), body: {
       "name": _nameController.text,
       "file": _fileController.text,
     });
