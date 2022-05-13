@@ -1,6 +1,9 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:aplikasi_mobile/page/property/add_product.dart';
