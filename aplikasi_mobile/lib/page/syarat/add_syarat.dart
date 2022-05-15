@@ -1,5 +1,6 @@
 import 'dart:io';
 // import 'package:coba/theme/colors.dart';
+import 'package:aplikasi_mobile/page/buyer/transakasi.dart';
 import 'package:aplikasi_mobile/widget/syarat_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FileUpload extends StatefulWidget {
   const FileUpload({Key? key}) : super(key: key);
@@ -58,6 +60,24 @@ class _FileUploadState extends State<FileUpload> {
     print(_namaFile);
   }
 
+  final namaLengkapController = TextEditingController();
+  final ImageKtp = TextEditingController();
+
+  late SharedPreferences dataSyarat;
+  late bool syarat;
+   @override
+  void initState() {
+    super.initState();
+    check_already_add();
+  }
+  void check_already_add() async {
+    dataSyarat = await SharedPreferences.getInstance();
+    syarat = (dataSyarat.getBool('Selesai?') ?? true);
+    if (syarat == false) {
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => Transaksi()));
+    }
+  }
   // void _uploadFile(File file) async {
   //   var stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
   //   var length = file.length();
@@ -359,4 +379,10 @@ class _FileUploadState extends State<FileUpload> {
       ),
     );
   }
+
+  //  void rutePage(String token) async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   await pref.setString("save data", dataSyarat);
+  //   Navigator.push(context, MaterialPageRoute(builder: (context) => Transaksi()));
+  // }
 }
