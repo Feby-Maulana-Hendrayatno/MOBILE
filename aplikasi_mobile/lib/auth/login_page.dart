@@ -20,6 +20,33 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController txtPassword = new TextEditingController();
   TextEditingController txtUsername = new TextEditingController();
 
+  final username_controller = TextEditingController();
+  final password_controller = TextEditingController();
+  late SharedPreferences logindata;
+  late bool newuser;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    check_if_already_login();
+  }
+  void check_if_already_login() async {
+    logindata = await SharedPreferences.getInstance();
+    newuser = (logindata.getBool('login') ?? true);
+    print(newuser);
+    if (newuser == false) {
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => MyDashboard()));
+    }
+  }
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    username_controller.dispose();
+    password_controller.dispose();
+    super.dispose();
+  }
+
   Future _doLogin() async {
     if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
       Alert(context: context, title: "Data tidak benar", type: AlertType.error)
@@ -256,9 +283,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-   void rutePage(String token) async {
+  void rutePage(String token) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.setString("login", token);
     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
   }
+
+  MyDashboard() {}
 }
