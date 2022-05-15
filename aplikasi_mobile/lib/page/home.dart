@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key, String? title}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();

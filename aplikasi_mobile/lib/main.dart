@@ -5,14 +5,23 @@ import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
+import 'package:aplikasi_mobile/page/welcome/welcome_page.dart';
+import 'package:aplikasi_mobile/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'package:sp_util/sp_util.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 //import '_page.dart';
 import 'page/start_page.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SpUtil.getInstance();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -31,14 +40,25 @@ class MyApp extends StatelessWidget {
         'property_page': (context) => PropertyPage(),
         'navigasi_page': (context) => Navigasi(),
         "profile_page": (context) => ProfilePage(),
+        "welcome_page": (context) => WelcomePage(),
+        "splash_page": (context) => Splash(),
       },
 
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       //yg baru onpresed
-      initialRoute: 'login_page',
+      
+      // initialRoute: 'login_page',
+      // initialRoute : 'welcome_page',
+      initialRoute : 'splash_page',
 
+      // home: AnimatedSplashScreen(
+      //   splash: 'assets/images/3.png',
+      //   duration: 2000,
+      //   splashTransition: SplashTransition.scaleTransition,
+      //   backgroundColor: Colors.blue,
+      //   nextScreen : HomePage(title: 'Welcome')),
       // yang lama
       //home: LoginPage(),
     );

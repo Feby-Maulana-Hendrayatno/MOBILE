@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
+import 'package:aplikasi_mobile/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'daftar_page.dart';
 import 'package:http/http.dart' as http;
 
@@ -38,7 +40,8 @@ class _LoginPageState extends State<LoginPage> {
       'password': txtPassword.text,
     }, headers: {
       'Accept': 'application/json'
-    });
+    }
+    );
     // progressDialog.close();
 
     if (response.statusCode == 200) {
@@ -46,6 +49,8 @@ class _LoginPageState extends State<LoginPage> {
       print(jsonResponse['data']['user']['email']);
       // Alert(context: context, title: "Login Berhasil", type: AlertType.success)
       //     .show();
+      // final body = json.decode(response.body);
+      // rutePage(body["token"]);a
 
       Alert(
           context: context,
@@ -55,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             DialogButton(
               child: Text("Ok"),
               onPressed: () {
-                Navigator.pushNamed(context, 'home_page');
+                                rutePage("token");
               },
             )
           ]).show();
@@ -250,5 +255,10 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+   void rutePage(String token) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("login", token);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }

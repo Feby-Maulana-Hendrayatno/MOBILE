@@ -48,6 +48,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   sn_progress_dialog: ^1.0.6
   page: ^1.2.0
+  sp_util: ^2.0.3
+  shared_preferences_web: ^2.0.4
+  shared_preferences: ^2.0.15
+  animated_splash_screen: ^1.2.0
 
 dev_dependencies:
   flutter_test:
