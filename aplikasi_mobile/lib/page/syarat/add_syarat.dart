@@ -1,14 +1,12 @@
 import 'dart:io';
 // import 'package:coba/theme/colors.dart';
-// import 'package:coba/widget/syarat_widget.dart';
+import '../../widget/syarat_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 // import 'package:coba/screens/home_page.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
-
-import '../../widget/syarat_widget.dart';
 
 class FileUpload extends StatefulWidget {
   const FileUpload({Key? key}) : super(key: key);
