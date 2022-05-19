@@ -1,10 +1,11 @@
 import 'dart:async';
 
+
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'package:aplikasi_mobile/auth/login.dart';
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
 import 'package:aplikasi_mobile/page/home.dart';
-import 'package:aplikasi_mobile/page/welcome/welcome_page.dart';
+import 'package:aplikasi_mobile/page/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

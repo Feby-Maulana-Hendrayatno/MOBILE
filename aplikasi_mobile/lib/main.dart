@@ -6,13 +6,14 @@ import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
-import 'package:aplikasi_mobile/page/welcome/welcome_page.dart';
+import 'package:aplikasi_mobile/page/welcome/welcome.dart';
 import 'package:aplikasi_mobile/splash/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'package:aplikasi_mobile/auth/login.dart';
 import 'package:sp_util/sp_util.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 
 //import '_page.dart';
 import 'page/start_page.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
       ),
       //yg baru onpresed
 
-      initialRoute: (SpUtil.getBool("isLogin")!) ? 'home_page' : 'navigasi_page',
+      initialRoute: (SpUtil.getBool("isLogin")!) ? 'navigasi_page' : 'splash_page',
     // initialRoute: 'home_page',
 
       // home: AnimatedSplashScreen(

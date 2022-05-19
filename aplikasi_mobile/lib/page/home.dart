@@ -1,11 +1,10 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, avoid_print, prefer_final_fields, unused_field
+
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sp_util/sp_util.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
@@ -16,16 +15,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future getProducts() async {
-    final response = await http.get(Uri.parse(AppConfig.getUrl()+);
+  final String url = 'http://10.0.127.69:8000/api/perumahan/data';
+  Future dataPerumahan() async {
+    var response = await http.get(Uri.parse(AppConfig.getUrl() + 'perumahan/data'));
     print(json.decode(response.body));
-    return json.decode(response.body);
-  }
-
-  Future deleteProducts(String productId) async {
-    String url = 'http://192.168.1.137:8000/api/propertys/' + productId;
-
-    var response = await http.delete(Uri.parse(url));
     return json.decode(response.body);
   }
 
@@ -40,14 +33,7 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-    final items = <Widget>[
-      Icon(Icons.home, size: 30),
-      Icon(Icons.search, size: 30),
-      Icon(Icons.favorite, size: 30),
-      Icon(Icons.settings, size: 30),
-      Icon(Icons.person, size: 30),
-    ];
-    getProducts();
+    dataPerumahan();
     return Scaffold(
         // bottomNavigationBar: Theme(
         //   data: Theme.of(context).copyWith(
@@ -70,50 +56,42 @@ class _HomePageState extends State<HomePage> {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => HomePage()));
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         appBar: AppBar(
-          title: Text("Property"),
+          title: const Text("Property"),
           backgroundColor: Colors.amber,
         ),
         body: FutureBuilder(
-            future: getProducts(),
+            future: dataPerumahan(),
             builder: (context, AsyncSnapshot snapshot) {
               print(snapshot..data);
               if (snapshot.hasData) {
                 return ListView.builder(
                     itemCount: snapshot.data['data'].length,
                     itemBuilder: (context, index) {
-                      return Container(
+                      return SizedBox(
                         height: 180,
                         child: Card(
-                          elevation: 5,
+                          elevation: 15,
                           child: Row(
                             children: [
                               GestureDetector(
-                                // onTap: () {
-                                //   Navigator.push(
-                                //       context,
-                                //       MaterialPageRoute(
-                                //           builder: (context) => HomePage(
-                                //                 product: snapshot.data['data']
-                                //                     [index],
-                                //               )));
-                                // },
+                                
                                 child: Container(
                                   decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(15.0)),
-                                  padding: EdgeInsets.all(5),
-                                  height: 120,
-                                  width: 120,
+                                  padding: const EdgeInsets.all(5),
+                                  height: 140,
+                                  width: 200,
                                   child: Image.network(
                                       "http://192.168.1.137:8000/storage/${snapshot.data['data'][index]['foto']}"),
                                 ),
                               ),
                               Expanded(
                                 child: Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -123,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                                         child: Text(
                                           snapshot.data['data'][index]
                                               ['nama_perumahan'],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -134,55 +112,8 @@ class _HomePageState extends State<HomePage> {
                                               [index]['uraian'])),
                                       Align(
                                           alignment: Alignment.topLeft,
-                                          child: Text(snapshot.data['data']
+                                          child: Text("Lokasi " + snapshot.data['data']
                                               [index]['alamat'])),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              GestureDetector(
-                                                // onTap: () {
-                                                //   Navigator.push(
-                                                //       context,
-                                                //       MaterialPageRoute(
-                                                //         builder: (context) =>
-                                                //             EditProduct(
-                                                //           product: snapshot
-                                                //                   .data['data']
-                                                //               [index],
-                                                //         ),
-                                                //       ));
-                                                // },
-                                                child: Icon(
-                                                  Icons.edit,
-                                                ),
-                                              ),
-                                              GestureDetector(
-                                                onTap: () {
-                                                  deleteProducts(snapshot
-                                                          .data['data'][index]
-                                                              ['id']
-                                                          .toString())
-                                                      .then((value) {
-                                                    setState(() {});
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(SnackBar(
-                                                      content: Text(
-                                                          "Product berhasil di Hapus"),
-                                                    ));
-                                                  });
-                                                },
-                                                child: Icon(
-                                                  Icons.delete,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -193,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     });
               } else {
-                return Text('Data Error');
+                return const Text('Data Error');
               }
             }));
   }

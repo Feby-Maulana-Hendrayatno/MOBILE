@@ -1,7 +1,7 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, avoid_print
+
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sp_util/sp_util.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -24,13 +24,6 @@ class _DashboardPageState extends State<DashboardPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    final items = <Widget>[
-      Icon(Icons.home, size:30),
-      Icon(Icons.search, size:30),
-      Icon(Icons.favorite, size:30),
-      Icon(Icons.settings, size:30),
-      Icon(Icons.person, size:30),
-    ];
     return Scaffold(
       appBar: AppBar(
         title: Text("Hai ," + SpUtil.getString("name")!),

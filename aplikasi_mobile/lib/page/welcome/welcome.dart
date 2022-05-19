@@ -1,11 +1,7 @@
-import 'package:aplikasi_mobile/page/home.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:aplikasi_mobile/auth/login_page.dart';
-import 'dart:async';
 
 class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
   @override
   State<WelcomePage> createState() => _WelcomePageState();
 }
@@ -15,7 +11,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           // color: Colors.black,
@@ -25,28 +21,25 @@ class _WelcomePageState extends State<WelcomePage> {
               Positioned(
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/images/welcome.png', ),
                           fit: BoxFit.fill)),
                 ),
               ),
               Positioned(
-                right: 105,
-                top: 0,
-                width: 200,
-                height: 730,
+                height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/nama_aplikasi.png', ))),
                 ),
               ),
               Positioned(
-                right: 105,
-                top: 0,
-                width: 200,
-                height: 990,
+                top: 400,
+                width: MediaQuery.of(context).size.width,
+                // ignore: avoid_unnecessary_containers
                 child: Container(
                   child: TextButton(
                     style: TextButton.styleFrom(

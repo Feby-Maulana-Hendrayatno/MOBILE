@@ -8,8 +8,8 @@ import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
-import 'package:aplikasi_mobile/auth/login_page.dart';
-import 'login_page.dart';
+import 'package:aplikasi_mobile/auth/login.dart';
+import 'login.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController txtName = new TextEditingController();
   TextEditingController txtEmail = new TextEditingController();
   TextEditingController txtPassword = new TextEditingController();
-  TextEditingController txtTanggalLahir = new TextEditingController();
+  // TextEditingController txtTanggalLahir = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -158,27 +158,27 @@ class _RegisterPageState extends State<RegisterPage> {
                         obscureText: true,
                         autofocus: true,
                       ),
-                      SizedBox(height: 15),
-                      DateTimeField(
-                          controller: txtTanggalLahir,
-                          decoration: new InputDecoration(
-                              hintText: "masukan tanggal lahir anda",
-                              labelText: "Tgl Lahir",
-                              icon: Icon(Icons.date_range),
-                              border: OutlineInputBorder(
-                                  borderRadius: new BorderRadius.circular(8.0)),
-                              hintStyle: GoogleFonts.oswald(
-                                  color: Color.fromARGB(255, 223, 151, 70),
-                                  fontSize: 14)),
-                          autofocus: true,
-                          format: format,
-                          onShowPicker: (context, currentValue) {
-                            return showDatePicker(
-                                context: context,
-                                firstDate: DateTime(1970),
-                                initialDate: currentValue ?? DateTime.now(),
-                                lastDate: DateTime(2100));
-                          }),
+                      // SizedBox(height: 15),
+                      // DateTimeField(
+                      //     controller: txtTanggalLahir,
+                      //     decoration: new InputDecoration(
+                      //         hintText: "masukan tanggal lahir anda",
+                      //         labelText: "Tgl Lahir",
+                      //         icon: Icon(Icons.date_range),
+                      //         border: OutlineInputBorder(
+                      //             borderRadius: new BorderRadius.circular(8.0)),
+                      //         hintStyle: GoogleFonts.oswald(
+                      //             color: Color.fromARGB(255, 223, 151, 70),
+                      //             fontSize: 14)),
+                      //     autofocus: true,
+                      //     format: format,
+                      //     onShowPicker: (context, currentValue) {
+                      //       return showDatePicker(
+                      //           context: context,
+                      //           firstDate: DateTime(1970),
+                      //           initialDate: currentValue ?? DateTime.now(),
+                      //           lastDate: DateTime(2100));
+                      //     }),
                       SizedBox(height: 50),
                       Container(
                         margin: EdgeInsets.only(
@@ -219,7 +219,7 @@ class _RegisterPageState extends State<RegisterPage> {
     String name = txtName.text;
     String email = txtEmail.text;
     String password = txtPassword.text;
-    String tanggalLahir = txtTanggalLahir.text;
+    // String tanggalLahir = txtTanggalLahir.text;
     // print(name);
     // print(email);
     // print(password);
@@ -240,7 +240,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'name': name,
       'email': email,
       'password': password,
-      'tanggal_lahir': tanggalLahir,
+      // 'tanggal_lahir': tanggalLahir,
     }, headers: {
       'Accept': 'application/json'
     });
