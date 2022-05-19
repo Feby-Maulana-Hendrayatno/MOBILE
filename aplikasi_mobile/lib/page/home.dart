@@ -31,9 +31,10 @@ class _HomePageState extends State<HomePage> {
     ];
     return Scaffold(
       appBar: AppBar(title: Text('Complicated image slider demo')),
-      bottomNavigationBar: CurvedNavigationBar(
-        items: items,
-      ),
+      //bottomNavigationBar: 
+      // CurvedNavigationBar(
+      //   items: items,
+      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
