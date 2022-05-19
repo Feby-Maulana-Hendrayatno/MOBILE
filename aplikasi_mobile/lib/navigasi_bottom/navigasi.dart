@@ -5,10 +5,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:flutter/material.dart';
-
 import 'package:aplikasi_mobile/page/property/add_product.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
-
 import '../page/chat_page.dart';
 
 class Navigasi extends StatefulWidget {
@@ -34,14 +32,15 @@ class _NavigasiState extends State<Navigasi> {
     final items = <Widget>[
       Icon(Icons.home, size: 30),
       Icon(Icons.search, size: 30),
-      Icon(Icons.favorite, size: 30),
+      Icon(Icons.chat, size: 30),
       Icon(Icons.settings, size: 30),
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
-              iconTheme: IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
+              iconTheme:
+                  IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
           child: CurvedNavigationBar(
             key: navigationKey,
             color: Color.fromARGB(255, 79, 238, 190),

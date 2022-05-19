@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 class HomePage extends StatefulWidget {
   HomePage({Key? key, String? title}) : super(key: key);
 
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -24,11 +23,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      Icon(Icons.home, size:30),
-      Icon(Icons.search, size:30),
-      Icon(Icons.favorite, size:30),
-      Icon(Icons.settings, size:30),
-      Icon(Icons.person, size:30),
+      Icon(Icons.home, size: 30),
+      Icon(Icons.search, size: 30),
+      Icon(Icons.favorite, size: 30),
+      Icon(Icons.settings, size: 30),
+      Icon(Icons.person, size: 30),
     ];
     return Scaffold(
       appBar: AppBar(title: Text('Complicated image slider demo')),
@@ -38,16 +37,16 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-          Positioned(
+            Positioned(
               child: Container(
                 margin: EdgeInsets.only(top: 20, bottom: 20, right: 150),
                 child: Center(
-                  child :Text(
+                  child: Text(
                     'Rumah Populer',
                     style: TextStyle(
-                      fontFamily:'AkayaTelivigala',
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontSize: 25,
+                      fontFamily: 'AkayaTelivigala',
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontSize: 25,
                     ),
                   ),
                 ),
