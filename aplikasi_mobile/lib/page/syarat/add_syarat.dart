@@ -1,6 +1,6 @@
 import 'dart:io';
 // import 'package:coba/theme/colors.dart';
-import 'package:aplikasi_mobile/widget/syarat_widget.dart';
+import '../../widget/syarat_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 // import 'package:coba/screens/home_page.dart';
@@ -24,16 +24,16 @@ class _FileUploadState extends State<FileUpload> {
   final _scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
   String? _fileName;
   File? imageKtp;
-  File? imageWarna;
+  File? imagePasFoto;
   File? imageKk;
   File? imageRekening;
   File? imageNpwp;
   File? imageSiup;
-  File? karyawan;
-  File? gaji;
-  File? pegawai;
-  File? sk;
-  File? nikah;
+  File? imageFotoNikah;
+  String? suratKaryawan;
+  String? suratGaji;
+  String? suratPegawai;
+  String? sk;
   String? _saveAsFileName;
   List<PlatformFile>? _paths;
   String? _directoryPath;
@@ -47,7 +47,7 @@ class _FileUploadState extends State<FileUpload> {
     var path = await filePicker.getDirectoryPath();
     var file = await filePicker.pickFiles(
         type: FileType.custom, allowedExtensions: ["pdf", "doc", "docx"]);
-
+    // print(path.runtimeType);
     setState(() {
       _filePath = path.toString();
       _namaFile = path.toString().split("/").last;
@@ -118,11 +118,12 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickFiles(),
+                  onPressed: () => _pickSuratKaryawan(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
               ],
             ),
+            Text(suratKaryawan.toString()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,11 +133,12 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickFiles(),
+                  onPressed: () => _pickSuratgaji(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
               ],
             ),
+            Text(suratGaji.toString()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -146,11 +148,12 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickFiles(),
+                  onPressed: () => _pickSuratPegawai(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
               ],
             ),
+            Text(suratPegawai.toString()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,12 +163,12 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickFiles(),
+                  onPressed: () => _pickSk(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
               ],
             ),
-
+            Text(sk.toString()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -175,11 +178,14 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImagePasFoto(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imagePasFoto == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imagePasFoto),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -189,11 +195,15 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageKtp(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imageKtp == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageKtp),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,11 +213,14 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageFotoNikah(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imageFotoNikah == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageFotoNikah),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -217,11 +230,14 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageKk(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imageKk == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageKk),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -231,11 +247,14 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageRekening(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imageRekening == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageRekening),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -245,11 +264,15 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageSiup(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
+            imageSiup == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageSiup),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -259,12 +282,34 @@ class _FileUploadState extends State<FileUpload> {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
-                  onPressed: () => _pickGambar(),
+                  onPressed: () => _pickImageNpwp(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
               ],
             ),
-
+            imageNpwp == null
+                ? const Text("Pilih Gambar")
+                : WidgetGmbar(imageFile: imageNpwp),
+            // Text()
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 181, 149, 137))),
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Data Berhasil Disimpan')));
+                  },
+                  child: const Text("Simpan"),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
             // _namaFile == null
             //     ? Text("Lampirkan Surat NPWP : ")
             //     : Text("Surat NPWP : $_namaFile "),
@@ -278,14 +323,14 @@ class _FileUploadState extends State<FileUpload> {
             // OutlineButton(
             //   child: Text("Upload File"),
             //   onPressed: () {},
-            // )
+            //
           ],
         ),
       ),
     );
   }
 
-  void _pickFiles() async {
+  void _pickSuratKaryawan() async {
     _resetState();
     try {
       _directoryPath = null;
@@ -303,24 +348,21 @@ class _FileUploadState extends State<FileUpload> {
     if (!mounted) return;
     setState(() {
       _isLoading = false;
-      _fileName =
-          _paths != null ? _paths!.map((e) => e.name).toString() : '...';
+      suratKaryawan =
+          (_paths != null ? _paths!.map((e) => e.name).toString() : '...');
       _userAborted = _paths == null;
     });
   }
 
-  void _pickGambar() async {
+  void _pickSuratgaji() async {
     _resetState();
     try {
       _directoryPath = null;
       _paths = (await FilePicker.platform.pickFiles(
-        type: FileType.media,
-        allowMultiple: _multiPick,
-        onFileLoading: (FilePickerStatus status) => print(status),
-        allowedExtensions: (_extension?.isNotEmpty ?? false)
-            ? _extension?.replaceAll(' ', '').split(',')
-            : null,
-      ))
+              type: FileType.custom,
+              allowMultiple: _multiPick,
+              onFileLoading: (FilePickerStatus status) => print(status),
+              allowedExtensions: ["pdf"]))
           ?.files;
     } on PlatformException catch (e) {
       _logException('Unsupported operation' + e.toString());
@@ -330,10 +372,204 @@ class _FileUploadState extends State<FileUpload> {
     if (!mounted) return;
     setState(() {
       _isLoading = false;
-      _fileName =
-          _paths != null ? _paths!.map((e) => e.name).toString() : '...';
+      suratGaji =
+          (_paths != null ? _paths!.map((e) => e.name).toString() : '...');
       _userAborted = _paths == null;
     });
+  }
+
+  void _pickSuratPegawai() async {
+    _resetState();
+    try {
+      _directoryPath = null;
+      _paths = (await FilePicker.platform.pickFiles(
+              type: FileType.custom,
+              allowMultiple: _multiPick,
+              onFileLoading: (FilePickerStatus status) => print(status),
+              allowedExtensions: ["pdf"]))
+          ?.files;
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+    if (!mounted) return;
+    setState(() {
+      _isLoading = false;
+      suratPegawai =
+          (_paths != null ? _paths!.map((e) => e.name).toString() : '...');
+      _userAborted = _paths == null;
+    });
+  }
+
+  void _pickSk() async {
+    _resetState();
+    try {
+      _directoryPath = null;
+      _paths = (await FilePicker.platform.pickFiles(
+              type: FileType.custom,
+              allowMultiple: _multiPick,
+              onFileLoading: (FilePickerStatus status) => print(status),
+              allowedExtensions: ["pdf"]))
+          ?.files;
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+    if (!mounted) return;
+    setState(() {
+      _isLoading = false;
+      sk = _paths != null ? _paths!.map((e) => e.name).toString() : '...';
+      _userAborted = _paths == null;
+    });
+  }
+
+  void _pickImageKtp() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageKtp = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImagePasFoto() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imagePasFoto = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImageKk() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageKk = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImageRekening() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageRekening = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImageNpwp() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageNpwp = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImageSiup() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageSiup = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
+  }
+
+  void _pickImageFotoNikah() async {
+    _resetState();
+    try {
+      FilePickerResult? result =
+          await FilePicker.platform.pickFiles(type: FileType.media);
+      if (result != null) {
+        File file = File(result.files.single.path!);
+        // print(ZZZZzz);
+        setState(() {
+          imageFotoNikah = file;
+        });
+      } else {
+        // User canceled the picker
+      }
+    } on PlatformException catch (e) {
+      _logException('Unsupported operation' + e.toString());
+    } catch (e) {
+      _logException(e.toString());
+    }
   }
 
   void _resetState() {
@@ -356,6 +592,27 @@ class _FileUploadState extends State<FileUpload> {
     _scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         content: Text(message),
+      ),
+    );
+  }
+}
+
+class WidgetGmbar extends StatelessWidget {
+  const WidgetGmbar({
+    Key? key,
+    required this.imageFile,
+  }) : super(key: key);
+
+  final File? imageFile;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: SizedBox(
+        width: 100,
+        height: 200,
+        child: Image.file(imageFile!, fit: BoxFit.cover),
       ),
     );
   }
