@@ -22,18 +22,19 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-    final items = <Widget>[
-      Icon(Icons.home, size:30),
-      Icon(Icons.search, size:30),
-      Icon(Icons.favorite, size:30),
-      Icon(Icons.settings, size:30),
-      Icon(Icons.person, size:30),
-    ];
+    // final items = <Widget>[
+    //   Icon(Icons.home, size:30),
+    //   Icon(Icons.search, size:30),
+    //   Icon(Icons.favorite, size:30),
+    //   Icon(Icons.settings, size:30),
+    //   Icon(Icons.person, size:30),
+    // ];
     return Scaffold(
       appBar: AppBar(title: Text('Complicated image slider demo')),
-      bottomNavigationBar: CurvedNavigationBar(
-        items: items,
-      ),
+      //bottomNavigationBar: 
+      // CurvedNavigationBar(
+      //   items: items,
+      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
