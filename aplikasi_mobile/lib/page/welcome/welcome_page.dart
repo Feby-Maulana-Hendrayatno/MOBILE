@@ -1,15 +1,19 @@
+import 'package:aplikasi_mobile/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'dart:async';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+class WelcomePage extends StatefulWidget {
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
 
-    @override
+class _WelcomePageState extends State<WelcomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // title: Text("Login"),
-      // ),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -20,10 +24,8 @@ class WelcomePage extends StatelessWidget {
             children: <Widget>[
               Positioned(
                 child: Container(
-                  // height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                      // color: Colors.black,
                       image: DecorationImage(
                           image: AssetImage('assets/images/welcome.png', ),
                           fit: BoxFit.fill)),

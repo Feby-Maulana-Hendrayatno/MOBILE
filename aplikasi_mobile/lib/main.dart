@@ -1,6 +1,7 @@
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
+import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
@@ -41,17 +42,18 @@ class MyApp extends StatelessWidget {
         'navigasi_page': (context) => Navigasi(),
         "profile_page": (context) => ProfilePage(),
         "welcome_page": (context) => WelcomePage(),
-        "splash_page": (context) => Splash(),
+        'splash_page': (context) => Splash(),
+        "dashboard_page": (context) => DashboardPage(),
+        
       },
 
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       //yg baru onpresed
-      
-      // initialRoute: 'login_page',
-      // initialRoute : 'welcome_page',
-      initialRoute : 'splash_page',
+
+      initialRoute: (SpUtil.getBool("isLogin")!) ? 'home_page' : 'navigasi_page',
+    // initialRoute: 'home_page',
 
       // home: AnimatedSplashScreen(
       //   splash: 'assets/images/3.png',

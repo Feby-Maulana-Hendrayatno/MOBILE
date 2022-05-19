@@ -17,28 +17,6 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  void initState() {
-    super.initState();
-    autoDashboard();
-  }
-
-  autoDashboard() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    String? val = pref.getString("login");
-    var duration = const Duration(seconds: 5);
-    return Timer(duration, () {
-      if (val != null) {
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => LoginPage()), (route) => false);
-      } else {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => WelcomePage()));
-      }
-    });
-  }
-  
-  
-  @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
         splash: 'assets/images/3.png',
@@ -49,7 +27,5 @@ class _SplashState extends State<Splash> {
         splashIconSize: double.maxFinite,
         nextScreen : WelcomePage()
     );
-  }
-
-    
+  } 
 }

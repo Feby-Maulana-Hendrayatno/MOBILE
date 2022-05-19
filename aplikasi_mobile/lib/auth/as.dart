@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:aplikasi_mobile/login_model.dart';
+import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 import 'package:sp_util/sp_util.dart';
 import 'daftar_page.dart';
 import 'package:http/http.dart' as http;
@@ -23,17 +23,19 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController txtPassword = new TextEditingController();
   TextEditingController txtUsername = new TextEditingController();
 
-  final username_controller = TextEditingController();
-  final password_controller = TextEditingController();
-
   Future _doLogin() async {
     if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
       Alert(context: context, title: "Data tidak benar", type: AlertType.error)
           .show();
       return;
     }
-    ProgressDialog progressDialog = ProgressDialog(context: context);
-    progressDialog.show(msg: "Loading......", max: 100);
+    // ProgressDialog progressDialog = ProgressDialog(context: context);
+    // progressDialog.show(msg: "Loading......", max: 100);
+    //VERSI LAMA BRO
+    // final response = await http.post(
+    //     Uri.http('192.168.1.11:8000', 'api/login'),
+    //     body: {'email': txtUsername.text, 'password': txtPassword.text},
+    //     headers: {'Accept': 'application/json'});
     final response =
         // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
         await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
@@ -42,38 +44,36 @@ class _LoginPageState extends State<LoginPage> {
     }, headers: {
       'Accept': 'application/json'
     });
-    progressDialog.close();
+    // progressDialog.close();
 
     if (response.statusCode == 200) {
       // var responseDecode = jsonDecode(response.body);
-      //   bool success = responseDecode['success'];
-      //   var data = responseDecode['data'];
-      //   var user = responseDecode['user'];
-      //   var token = responseDecode['token'];
-      //   print(user);
-      // final loginModel = loginModelFromJson(response.body);
-      // print(loginModel.data.user.email);
-      // print(loginModel.data.user.token);
-      // SpUtil.putBool('isLogin', true);
-      // Navigator.pushReplacementNamed(context, 'home_page');
+      // bool success = responseDecode['success'];
+      // var data = responseDecode['data'];
+      // var user = responseDecode['user'];
+      // var token = responseDecode['token'];
+      // print(user['name']);
 
       final loginModel = loginModelFromJson(response.body);
-      var token = loginModel.data.user.token; // route dari json array nya
-      SpUtil.putString("token", token);
+      SpUtil.putString("token", loginModel.data.token);
       SpUtil.putString("name", loginModel.data.user.name);
+
+
       SpUtil.putBool('isLogin', true);
-      // Alert(
-      //     context: context,
-      //     title: "Login Berhasil",
-      //     type: AlertType.success,
-      //     buttons: [
-      //       DialogButton(
-      //         child: Text("Ok"),
-      //         onPressed: () {
-      Navigator.pushReplacementNamed(context, 'navigasi_page');
-      //     },
-      //   )
-      // ]).show();
+      Navigator.pushReplacementNamed(context, 'home_page');
+
+      Alert(
+          context: context,
+          title: "Login Berhasil",
+          type: AlertType.success,
+          buttons: [
+            DialogButton(
+              child: Text("Ok"),
+              onPressed: () {
+                Navigator.pushNamed(context, 'home_page');
+              },
+            )
+          ]).show();
     } else {
       Alert(context: context, title: "Login Gagal", type: AlertType.error)
           .show();
@@ -265,5 +265,12 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void rutePage(String token) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString("login", token);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DashboardPage()));
   }
 }

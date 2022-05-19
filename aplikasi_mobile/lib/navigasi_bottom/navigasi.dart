@@ -1,4 +1,5 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
+import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -22,12 +23,11 @@ class _NavigasiState extends State<Navigasi> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int? index = 0;
   final screens = [
-    PropertyPage(),
-    AddProduct(),
-    ChatPage(),
-    // AddProduct(),
     HomePage(),
+    ChatPage(),
+    PropertyPage(),
     ProfilePage(),
+    DashboardPage(),
   ];
   @override
   Widget build(BuildContext context) {
