@@ -1,5 +1,7 @@
 import 'dart:io';
 // import 'package:coba/theme/colors.dart';
+import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
+
 import '../../widget/syarat_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -8,14 +10,14 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 
-class FileUpload extends StatefulWidget {
-  const FileUpload({Key? key}) : super(key: key);
+class Syarat extends StatefulWidget {
+  const Syarat({Key? key}) : super(key: key);
 
   @override
-  State<FileUpload> createState() => _FileUploadState();
+  State<Syarat> createState() => _SyaratState();
 }
 
-class _FileUploadState extends State<FileUpload> {
+class _SyaratState extends State<Syarat> {
   late File _file;
   late String _namaFile;
   late String _filePath;
@@ -300,6 +302,8 @@ class _FileUploadState extends State<FileUpload> {
                       backgroundColor: MaterialStateProperty.all<Color>(
                           Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Transaksi()));
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Data Berhasil Disimpan')));
                   },

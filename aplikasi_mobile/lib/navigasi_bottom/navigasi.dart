@@ -1,5 +1,6 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
+import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/page/property/add_product.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
 import '../page/chat_page.dart';
+import '../page/syarat/add_syarat.dart';
 
 class Navigasi extends StatefulWidget {
   Navigasi({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _NavigasiState extends State<Navigasi> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int? index = 0;
   final screens = [
-    PropertyPage(),
+    Syarat(),
     AddProduct(),
     ChatPage(),
     // AddProduct(),
