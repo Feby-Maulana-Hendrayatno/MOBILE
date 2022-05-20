@@ -13,7 +13,7 @@ static String routeName = "/profile";
 
   Widget textfield({required String hintText}){
     return Material(
-      elevation: 3,
+      elevation: 2,
       shadowColor: Colors.brown[100],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(2),
@@ -208,9 +208,9 @@ class HeaderCurvedContainer extends CustomPainter{
   void paint(Canvas canvas, Size size) {
     Paint paint= Paint()..color=Colors.brown.shade200;
     Path path= Path()
-    ..relativeLineTo(0, 150)
-    ..quadraticBezierTo(size.width/2, 225, size.width, 150)
-    ..relativeLineTo(0, -150)
+    ..relativeLineTo(0, 100)
+    ..quadraticBezierTo(size.width/2, 200, size.width, 100)
+    ..relativeLineTo(0, -110)
     ..close();
     canvas.drawPath(path, paint);
   }
