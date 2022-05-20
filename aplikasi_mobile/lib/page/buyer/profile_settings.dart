@@ -183,4 +183,6 @@ static String routeName = "/profile";
       ),
     );
   }
+  
+  OutlineButton({required EdgeInsets padding, required RoundedRectangleBorder shape, required Null Function() onPressed, required Text child}) {}
 }

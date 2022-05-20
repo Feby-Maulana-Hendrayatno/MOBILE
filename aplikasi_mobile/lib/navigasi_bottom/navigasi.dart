@@ -1,18 +1,20 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
+<<<<<<< HEAD
 import 'package:aplikasi_mobile/page/icon/search.dart';
+=======
+>>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:flutter/material.dart';
-
 import 'package:aplikasi_mobile/page/property/add_product.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
-
 import '../page/chat_page.dart';
+import '../page/syarat/add_syarat.dart';
 
 class Navigasi extends StatefulWidget {
   Navigasi({Key? key}) : super(key: key);
@@ -25,6 +27,13 @@ class _NavigasiState extends State<Navigasi> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int? index = 0;
   final screens = [
+<<<<<<< HEAD
+=======
+    Syarat(),
+    AddProduct(),
+    ChatPage(),
+    // AddProduct(),
+>>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
     HomePage(),
     // ChatPage(),
     // Search(),
@@ -37,16 +46,23 @@ class _NavigasiState extends State<Navigasi> {
   Widget build(BuildContext context) {
     final items = <Widget>[
       Icon(Icons.home, size: 30),
+<<<<<<< HEAD
       // Icon(Icons.search, size: 30),
       Icon(Icons.assignment_sharp, size: 30),
     
       // Icon(Icons.settings, size: 30),
+=======
+      Icon(Icons.search, size: 30),
+      Icon(Icons.chat, size: 30),
+      Icon(Icons.settings, size: 30),
+>>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
-              iconTheme: IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
+              iconTheme:
+                  IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
           child: CurvedNavigationBar(
             key: navigationKey,
             color: Color.fromARGB(255, 79, 238, 190),
