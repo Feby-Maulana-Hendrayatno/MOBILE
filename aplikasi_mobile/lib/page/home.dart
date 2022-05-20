@@ -6,6 +6,7 @@ import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:sp_util/sp_util.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, String? title}) : super(key: key);
@@ -39,6 +40,15 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("Property"),
           backgroundColor: Colors.amber,
+          actions: [
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                SpUtil.clear();
+                Navigator.pushReplacementNamed(context, "login_page");
+              }
+              )
+        ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -170,8 +180,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        
-                  ],
+        ],
                 )
               ),
               const SizedBox(height: 80),
