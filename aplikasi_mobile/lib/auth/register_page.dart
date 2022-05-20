@@ -8,8 +8,8 @@ import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
-import 'package:aplikasi_mobile/auth/login.dart';
-import 'login.dart';
+import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);

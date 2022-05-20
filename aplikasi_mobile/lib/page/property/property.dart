@@ -1,32 +1,24 @@
 import 'dart:convert';
 
-import 'package:aplikasi_mobile/page/property/add_product.dart';
-import 'package:aplikasi_mobile/page/property/detail_property.dart';
-import 'package:aplikasi_mobile/page/property/edit_proprty.dart';
+import 'package:aplikasi_mobile/connection/app_config.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sp_util/sp_util.dart';
 import 'package:http/http.dart' as http;
-// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class PropertyPage extends StatefulWidget {
-  const PropertyPage({
-    Key? key,
-  }) : super(key: key);
+  PropertyPage({Key? key, String? title}) : super(key: key);
 
   @override
   State<PropertyPage> createState() => _PropertyPageState();
 }
 
 class _PropertyPageState extends State<PropertyPage> {
-  // final navigationKey = GlobalKey<CurvedNavigationBarState>();
-  // int index = 2;
-  // final screens = [
-  //   PropertyPage(),
-  //   AddProduct(),
-  // ];
-  final String url = 'http://192.168.1.15:8000/api/propertys';
-
-  Future getProducts() async {
-    var response = await http.get(Uri.parse(url));
+  final String url = 'http://10.0.127.69:8000/api/perumahan/data';
+  Future dataPerumahan() async {
+    var response = await http.get(Uri.parse(AppConfig.getUrl() + 'perumahan/data'));
     print(json.decode(response.body));
     return json.decode(response.body);
   }
@@ -38,6 +30,15 @@ class _PropertyPageState extends State<PropertyPage> {
     return json.decode(response.body);
   }
 
+  int _current = 0;
+  final CarouselController _controller = CarouselController();
+  final List<String> imgList = [
+    'assets/images/1.jpg',
+    'assets/images/2.jpg',
+    'assets/images/3.jpg',
+    'assets/images/4.jpg',
+    'assets/images/5.jpeg',
+  ];
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
@@ -47,7 +48,7 @@ class _PropertyPageState extends State<PropertyPage> {
       Icon(Icons.settings, size: 30),
       Icon(Icons.person, size: 30),
     ];
-    getProducts();
+    dataPerumahan();
     return Scaffold(
         // bottomNavigationBar: Theme(
         //   data: Theme.of(context).copyWith(
@@ -68,7 +69,7 @@ class _PropertyPageState extends State<PropertyPage> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => AddProduct()));
+                context, MaterialPageRoute(builder: (context) => PropertyPage()));
           },
           child: Icon(Icons.add),
         ),
@@ -77,38 +78,30 @@ class _PropertyPageState extends State<PropertyPage> {
           backgroundColor: Colors.amber,
         ),
         body: FutureBuilder(
-            future: getProducts(),
+            future: dataPerumahan(),
             builder: (context, AsyncSnapshot snapshot) {
+              print(snapshot..data);
               if (snapshot.hasData) {
                 return ListView.builder(
                     itemCount: snapshot.data['data'].length,
                     itemBuilder: (context, index) {
                       return Container(
-                        height: 180,
+                        height:400,
                         child: Card(
                           elevation: 5,
                           child: Row(
                             children: [
-                              
                               GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ProductDetail(
-                                                product: snapshot.data['data']
-                                                    [index],
-                                              )));
-                                },
+                                
                                 child: Container(
                                   decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(15.0)),
                                   padding: EdgeInsets.all(5),
-                                  height: 120,
-                                  width: 120,
+                                  height: 220,
+                                  width: 220,
                                   child: Image.network(
-                                      snapshot.data['data'][index]['image']),
+                                      "http://192.168.1.137:8000/storage/${snapshot.data['data'][index]['foto']}"),
                                 ),
                               ),
                               Expanded(
@@ -121,7 +114,8 @@ class _PropertyPageState extends State<PropertyPage> {
                                       Align(
                                         alignment: Alignment.topLeft,
                                         child: Text(
-                                          snapshot.data['data'][index]['name'],
+                                          snapshot.data['data'][index]
+                                              ['nama_perumahan'],
                                           style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold),
@@ -130,60 +124,11 @@ class _PropertyPageState extends State<PropertyPage> {
                                       Align(
                                           alignment: Alignment.topLeft,
                                           child: Text(snapshot.data['data']
-                                              [index]['description'])),
+                                              [index]['uraian'])),
                                       Align(
                                           alignment: Alignment.topLeft,
-                                          child: Text(snapshot.data['data']
-                                              [index]['location'])),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              GestureDetector(
-                                                onTap: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            EditProduct(
-                                                          product: snapshot
-                                                                  .data['data']
-                                                              [index],
-                                                        ),
-                                                      ));
-                                                },
-                                                child: Icon(
-                                                  Icons.edit,
-                                                ),
-                                              ),
-                                              GestureDetector(
-                                                onTap: () {
-                                                  deleteProducts(snapshot
-                                                          .data['data'][index]
-                                                              ['id']
-                                                          .toString())
-                                                      .then((value) {
-                                                    setState(() {});
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(SnackBar(
-                                                      content: Text(
-                                                          "Product berhasil di Hapus"),
-                                                    ));
-                                                  });
-                                                },
-                                                child: Icon(
-                                                  Icons.delete,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Text(snapshot.data['data'][index]
-                                              ['price']),
-                                        ],
-                                      ),
+                                          child: Text("Lokasi " + snapshot.data['data']
+                                              [index]['alamat'])),
                                     ],
                                   ),
                                 ),

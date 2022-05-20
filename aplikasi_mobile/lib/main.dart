@@ -5,11 +5,13 @@ import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
+import 'package:aplikasi_mobile/page/icon/search.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
+import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:aplikasi_mobile/page/welcome/welcome.dart';
 import 'package:aplikasi_mobile/splash/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikasi_mobile/auth/login.dart';
+import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:sp_util/sp_util.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -45,6 +47,9 @@ class MyApp extends StatelessWidget {
         "welcome_page": (context) => WelcomePage(),
         'splash_page': (context) => Splash(),
         "dashboard_page": (context) => DashboardPage(),
+        "search_page": (context) => Search(),
+        "syarat_page": (context) =>FileUpload(),
+        
         
       },
 
