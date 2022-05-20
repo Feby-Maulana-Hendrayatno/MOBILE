@@ -1,10 +1,8 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
+import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
-<<<<<<< HEAD
 import 'package:aplikasi_mobile/page/icon/search.dart';
-=======
->>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -27,18 +25,12 @@ class _NavigasiState extends State<Navigasi> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int? index = 0;
   final screens = [
-<<<<<<< HEAD
-=======
-    Syarat(),
-    AddProduct(),
-    ChatPage(),
-    // AddProduct(),
->>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
     HomePage(),
     // ChatPage(),
     // Search(),
     // PropertyPage(),
-    FileUpload(),
+    Syarat(),
+    Transaksi(),
     // DashboardPage(),
     ProfilePage(),
   ];
@@ -46,16 +38,9 @@ class _NavigasiState extends State<Navigasi> {
   Widget build(BuildContext context) {
     final items = <Widget>[
       Icon(Icons.home, size: 30),
-<<<<<<< HEAD
       // Icon(Icons.search, size: 30),
-      Icon(Icons.assignment_sharp, size: 30),
-    
-      // Icon(Icons.settings, size: 30),
-=======
-      Icon(Icons.search, size: 30),
       Icon(Icons.chat, size: 30),
-      Icon(Icons.settings, size: 30),
->>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
+      Icon(Icons.account_balance_wallet_rounded  , size: 30),
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(

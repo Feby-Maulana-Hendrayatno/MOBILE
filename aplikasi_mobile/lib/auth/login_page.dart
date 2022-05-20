@@ -212,8 +212,8 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         controller: txtUsername,
                         decoration: InputDecoration(
-                            hintText: "masukan nama lengkap anda",
-                            labelText: "Nama Lengkap",
+                            hintText: "masukan alamat email anda",
+                            labelText: "Nama Email",
                             icon: const Icon(Icons.people),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8.0)),

@@ -6,6 +6,7 @@ import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:sp_util/sp_util.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, String? title}) : super(key: key);
@@ -34,12 +35,20 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     dataPerumahan();
     return Scaffold(
         appBar: AppBar(
           title: const Text("Property"),
           backgroundColor: Colors.amber,
+          actions: [
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                SpUtil.clear();
+                Navigator.pushReplacementNamed(context, "login_page");
+              }
+              )
+        ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -77,35 +86,6 @@ class _HomePageState extends State<HomePage> {
                     Icons.search,
                     color: Colors.grey,
                     size: 28,
-=======
-    final items = <Widget>[
-      Icon(Icons.home, size: 30),
-      Icon(Icons.search, size: 30),
-      Icon(Icons.favorite, size: 30),
-      Icon(Icons.settings, size: 30),
-      Icon(Icons.person, size: 30),
-    ];
-    return Scaffold(
-      appBar: AppBar(title: Text('Complicated image slider demo')),
-      //bottomNavigationBar: 
-      // CurvedNavigationBar(
-      //   items: items,
-      // ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Positioned(
-              child: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 20, right: 150),
-                child: Center(
-                  child: Text(
-                    'Rumah Populer',
-                    style: TextStyle(
-                      fontFamily: 'AkayaTelivigala',
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontSize: 25,
-                    ),
->>>>>>> 5140e6f774dfea08dbf8a7c11e806203e08c64da
                   ),
                 ),
               ),
@@ -200,8 +180,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-        
-                  ],
+        ],
                 )
               ),
               const SizedBox(height: 80),
