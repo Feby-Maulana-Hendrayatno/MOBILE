@@ -52,7 +52,7 @@ class _TransaksiState extends State<Transaksi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Formulir Syarat"),
+        title: Text("Transaksi Pembayaran"),
         actions: <Widget>[
           IconButton(
             onPressed: () {
@@ -68,6 +68,17 @@ class _TransaksiState extends State<Transaksi> {
           children: <Widget>[
             SizedBox(
               height: 30,
+            ),
+            Text(
+              "Silahkan Upload Bukti Pembayaran Di bawah ini",
+              style: TextStyle(
+                fontSize: 20,
+                color: Color.fromARGB(255, 97, 78, 84),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+              width: 30,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,6 +97,10 @@ class _TransaksiState extends State<Transaksi> {
             imageBukti == null
                 ? const Text("Pilih Gambar")
                 : WidgetGmbar(imageFile: imageBukti),
+            SizedBox(
+              height: 30,
+              width: 30,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -97,14 +112,11 @@ class _TransaksiState extends State<Transaksi> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Data Berhasil Disimpan')));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Data Berhasil Dikirim')));
                   },
-                  child: const Text("Simpan"),
+                  child: const Text("Bayar"),
                 ),
-                SizedBox(
-                  height: 10,
-                )
               ],
             ),
           ],
