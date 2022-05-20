@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 
 import '../../widget/syarat_widget.dart';
@@ -111,7 +112,7 @@ class _TransaksiState extends State<Transaksi> {
                           Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                        MaterialPageRoute(builder: (context) => Navigasi()));
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Data Berhasil Dikirim')));
                   },

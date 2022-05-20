@@ -1,4 +1,5 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
+import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/page/icon/search.dart';
