@@ -48,7 +48,11 @@ class MyApp extends StatelessWidget {
         'splash_page': (context) => Splash(),
         "dashboard_page": (context) => DashboardPage(),
         "search_page": (context) => Search(),
+<<<<<<< HEAD
+        "syarat_page": (context) => FileUpload(),
+=======
         "syarat_page": (context) =>Syarat(),
+>>>>>>> 2f4dba936f1fbc3691b94f46af8efe5996b43562
         
         
       },
