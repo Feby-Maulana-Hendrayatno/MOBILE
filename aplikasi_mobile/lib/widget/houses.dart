@@ -25,8 +25,7 @@ class _HousesState extends State<Houses> {
         );
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 30, vertical: 20 / 2),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20 / 2),
         child: Container(
           height: 250,
           child: Column(
