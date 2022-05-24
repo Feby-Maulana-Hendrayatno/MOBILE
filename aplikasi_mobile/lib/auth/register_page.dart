@@ -13,6 +13,9 @@ import 'login_page.dart';
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
 
+final String url = 'http://192.168.1.15:8000/api/propertys';
+static String routeName = "/login";
+
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }

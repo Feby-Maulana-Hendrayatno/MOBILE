@@ -16,7 +16,6 @@ import 'package:sp_util/sp_util.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-
 //import '_page.dart';
 import 'page/start_page.dart';
 
@@ -48,13 +47,7 @@ class MyApp extends StatelessWidget {
         'splash_page': (context) => Splash(),
         "dashboard_page": (context) => DashboardPage(),
         "search_page": (context) => Search(),
-<<<<<<< HEAD
-        "syarat_page": (context) => FileUpload(),
-=======
-        "syarat_page": (context) =>Syarat(),
->>>>>>> 2f4dba936f1fbc3691b94f46af8efe5996b43562
-        
-        
+        // "syarat_page": (context) => FileUpload(),
       },
 
       theme: ThemeData(
