@@ -178,6 +178,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       //           initialDate: currentValue ?? DateTime.now(),
                       //           lastDate: DateTime(2100));
                       //     }),
+                      
                       SizedBox(height: 50),
                       Container(
                         margin: EdgeInsets.only(

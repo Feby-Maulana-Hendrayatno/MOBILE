@@ -109,6 +109,7 @@ class _DaftarPageState extends State<DaftarPage> {
           .show();
       return;
     }
+    
     // ProgressDialog progressDialog = ProgressDialog(context: context);
     // progressDialog.show(max: 100, msg: "Harap tunggu...");
     final response =

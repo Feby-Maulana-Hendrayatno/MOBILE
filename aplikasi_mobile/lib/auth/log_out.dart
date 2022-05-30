@@ -32,6 +32,7 @@ class _DashboardPageState extends State<DashboardPage> {
     getEmail();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
