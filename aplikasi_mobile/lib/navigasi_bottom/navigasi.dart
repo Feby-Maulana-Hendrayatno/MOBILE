@@ -29,8 +29,7 @@ class _NavigasiState extends State<Navigasi> {
     // ChatPage(),
     // Search(),
     // PropertyPage(),
-    Syarat(),
-    Transaksi(),
+    // FileUpload(),
     // DashboardPage(),
     ProfilePage(),
   ];
@@ -39,8 +38,9 @@ class _NavigasiState extends State<Navigasi> {
     final items = <Widget>[
       Icon(Icons.home, size: 30),
       // Icon(Icons.search, size: 30),
-      Icon(Icons.chat, size: 30),
-      Icon(Icons.account_balance_wallet_rounded  , size: 30),
+      Icon(Icons.assignment_sharp, size: 30),
+    
+      // Icon(Icons.settings, size: 30),
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
