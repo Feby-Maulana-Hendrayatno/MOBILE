@@ -10,6 +10,7 @@ import 'package:http/http.dart' as http;
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'login_page.dart';
 
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 

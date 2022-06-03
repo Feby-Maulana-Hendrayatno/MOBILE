@@ -14,6 +14,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   String email = "";
 
+
   Future getEmail()async{
     SharedPreferences preferences = await SharedPreferences.getInstance();
      setState(() {
