@@ -1,6 +1,4 @@
-
 // ignore_for_file: non_constant_identifier_names
-
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:aplikasi_mobile/model/login_model.dart';
 import 'package:flutter/material.dart';
@@ -81,9 +79,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // title: Text("Login"),
-      // ),
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
