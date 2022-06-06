@@ -1,6 +1,4 @@
-
 // ignore_for_file: non_constant_identifier_names
-
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:aplikasi_mobile/model/login_model.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sp_util/sp_util.dart';
 import 'package:http/http.dart' as http;
+
 
 
 class LoginPage extends StatefulWidget {
@@ -77,12 +76,10 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   // title: Text("Login"),
-      // ),
       body: SingleChildScrollView(
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
@@ -174,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'register_page');
+                      Navigator.pushNamed(context, 'navigasi_page');
                     },
                     child: const Text('Daftar',
                         style: TextStyle(

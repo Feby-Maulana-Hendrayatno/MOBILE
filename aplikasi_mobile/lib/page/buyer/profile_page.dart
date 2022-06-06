@@ -46,157 +46,168 @@ static String routeName = "/profile";
       onPressed: () {},
         ),
       ),
-      body: Stack(alignment: Alignment.center,
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              height: 330,
-              width: 350,
-              margin: EdgeInsets.symmetric(horizontal: 5),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body:SingleChildScrollView(
+        child: Column(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+              padding: EdgeInsets.all(2),
+              child: Text(
+              "Profile",
+              style: TextStyle(
+              fontSize: 35,
+              letterSpacing: 2,
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+              ),
+              ),
+              ),
+              Stack(
                 children: [
-                  TextFormField(
-                        controller: txtName,
-                        decoration: new InputDecoration(
-                            hintText: "masukan nama lengkap anda",
-                            labelText: "Nama Lengkap",
-                            icon: Icon(Icons.people),
-                            border: OutlineInputBorder(
-                                borderRadius: new BorderRadius.circular(8.0)),
-                            hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 223, 151, 70),
-                                fontSize: 12)),
-                        autofocus: true,
-                      ),
-                      SizedBox(height: 5),
-                      TextFormField(
-                        controller: txtEmail,
-                        decoration: new InputDecoration(
-                            hintText: "masukan email anda",
-                            labelText: "Email",
-                            icon: Icon(Icons.message),
-                            border: OutlineInputBorder(
-                                borderRadius: new BorderRadius.circular(8.0)),
-                            hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 223, 151, 70),
-                                fontSize: 12)),
-                        autofocus: true,
-                      ),
-                      SizedBox(height: 5),
-                      TextFormField(
-                        controller: txtPassword,
-                        decoration: new InputDecoration(
-                            hintText: "masukan password",
-                            labelText: "Password",
-                            icon: Icon(Icons.password_outlined),
-                            border: OutlineInputBorder(
-                                borderRadius: new BorderRadius.circular(8.0)),
-                            hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 223, 151, 70),
-                                fontSize: 12)),
-                        obscureText: true,
-                        autofocus: true,
-                      ),
-                      SizedBox(height: 5),
-                      TextFormField(
-                        controller: txtPassword,
-                        decoration: new InputDecoration(
-                            hintText: "konfirmasi password",
-                            labelText: "Confirm Password",
-                            icon: Icon(Icons.password_outlined),
-                            border: OutlineInputBorder(
-                                borderRadius: new BorderRadius.circular(8.0)),
-                            hintStyle: GoogleFonts.oswald(
-                                color: Color.fromARGB(255, 223, 151, 70),
-                                fontSize: 12)),
-                        obscureText: true,
-                        autofocus: true,
-                      ),
-                  // textfield(
-                  //   hintText: 'Username', 
-                  // ),
-                  // textfield(
-                  //   hintText: 'Email', 
-                  // ),
-                  // textfield(
-                  //   hintText: 'Password', 
-                  // ),
-                  // textfield(
-                  //   hintText: 'Confirm password', 
-                  // ),
                   Container(
-                    height: 35,
-                    width: double.infinity,
-                    child: RaisedButton(
-                      onPressed: (){},
-                      color: Colors.black12,
-                      child: Center(
-                        child: Text("Update", style: TextStyle(
-                          fontSize: 23,
-                          color: Colors.white,
+                    padding: EdgeInsets.all(2),
+                    width: 115,
+                    height:115,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300, width: 3),
+                      shape: BoxShape.circle,
+                      color: Colors.grey[300],
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/profile.png'),
+                        ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right:0,
+                    child: Padding(padding: EdgeInsets.only(bottom: 10, left: 10),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black54,
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: Colors.white,
+                                  ),
+                                  onPressed: (){},
+                                ),
+                            ),
+                            ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          
+              Container(
+                height: 330,
+                width: 350,
+                margin: EdgeInsets.symmetric(horizontal: 5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextFormField(
+                          controller: txtName,
+                          decoration: new InputDecoration(
+                              hintText: "masukan nama lengkap anda",
+                              labelText: "Nama Lengkap",
+                              icon: Icon(Icons.people),
+                              border: OutlineInputBorder(
+                                  borderRadius: new BorderRadius.circular(8.0)),
+                              hintStyle: GoogleFonts.oswald(
+                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  fontSize: 12)),
+                          autofocus: true,
+                        ),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: txtEmail,
+                          decoration: new InputDecoration(
+                              hintText: "masukan email anda",
+                              labelText: "Email",
+                              icon: Icon(Icons.message),
+                              border: OutlineInputBorder(
+                                  borderRadius: new BorderRadius.circular(8.0)),
+                              hintStyle: GoogleFonts.oswald(
+                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  fontSize: 12)),
+                          autofocus: true,
+                        ),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: txtPassword,
+                          decoration: new InputDecoration(
+                              hintText: "masukan password",
+                              labelText: "Password",
+                              icon: Icon(Icons.password_outlined),
+                              border: OutlineInputBorder(
+                                  borderRadius: new BorderRadius.circular(8.0)),
+                              hintStyle: GoogleFonts.oswald(
+                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  fontSize: 12)),
+                          obscureText: true,
+                          autofocus: true,
+                        ),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: txtPassword,
+                          decoration: new InputDecoration(
+                              hintText: "konfirmasi password",
+                              labelText: "Confirm Password",
+                              icon: Icon(Icons.password_outlined),
+                              border: OutlineInputBorder(
+                                  borderRadius: new BorderRadius.circular(8.0)),
+                              hintStyle: GoogleFonts.oswald(
+                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  fontSize: 12)),
+                          obscureText: true,
+                          autofocus: true,
+                        ),
+                    // textfield(
+                    //   hintText: 'Username', 
+                    // ),
+                    // textfield(
+                    //   hintText: 'Email', 
+                    // ),
+                    // textfield(
+                    //   hintText: 'Password', 
+                    // ),
+                    // textfield(
+                    //   hintText: 'Confirm password', 
+                    // ),
+                    Container(
+                      height: 35,
+                      width: double.infinity,
+                      child: RaisedButton(
+                        onPressed: (){},
+                        color: Colors.black12,
+                        child: Center(
+                          child: Text("Update", style: TextStyle(
+                            fontSize: 23,
+                            color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ]
+            ]
+          ),
+        //   CustomPaint(child: Container(
+        //     width: MediaQuery.of(context).size.width,
+        //     height: MediaQuery.of(context).size.height,
+        //   ),
+        //   painter: HeaderCurvedContainer(),
+        // ),
+        ],
         ),
-        CustomPaint(child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-        ),
-        painter: HeaderCurvedContainer(),
-      ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-            padding: EdgeInsets.all(2),
-            child: Text(
-            "Profile",
-            style: TextStyle(
-            fontSize: 35,
-            letterSpacing: 2,
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            ),
-            ),
-            ),
-            Container(
-              padding: EdgeInsets.all(2),
-              width: MediaQuery.of(context).size.width/2,
-              height: MediaQuery.of(context).size.width/2,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.shade300, width: 3),
-                shape: BoxShape.circle,
-                color: Colors.white,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/profile.png'),
-                  ),
-              ),
-            ),
-          ],
-        ),
-        Padding(padding: EdgeInsets.only(bottom: 270, left: 184),
-        child: CircleAvatar(
-          backgroundColor: Colors.black54,
-          child: IconButton(
-            icon: Icon(
-              Icons.edit,
-              color: Colors.white,
-              ),
-              onPressed: (){},
-            ),
-        ),
-        ),
-      ],
       )
     );
   }

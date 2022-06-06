@@ -49,8 +49,6 @@ class MyApp extends StatelessWidget {
         "dashboard_page": (context) => DashboardPage(),
         "search_page": (context) => Search(),
         // "syarat_page": (context) => FileUpload(),
-        
-        
       },
 
       theme: ThemeData(
