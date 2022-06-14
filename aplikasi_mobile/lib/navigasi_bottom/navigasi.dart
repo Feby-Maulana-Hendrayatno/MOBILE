@@ -1,6 +1,7 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
+import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/page/icon/search.dart';
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
@@ -23,6 +24,7 @@ class _NavigasiState extends State<Navigasi> {
   int? index = 0;
   final screens = [
     HomePage(),
+    // DetailPage(property: ,),
     // ChatPage(),
     // Search(),
     // PropertyPage(),
