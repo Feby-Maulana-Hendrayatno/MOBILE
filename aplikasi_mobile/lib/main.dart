@@ -5,6 +5,7 @@ import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/auth/register_page.dart';
+import 'package:aplikasi_mobile/page/home/home_screen.dart';
 import 'package:aplikasi_mobile/page/icon/search.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         'detail_page': (context) => DetailPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
+        'home_screen':(context) => HomeScreen(),
         'chat_page': (context) => ChatPage(),
         'property_page': (context) => PropertyPage(),
         'navigasi_page': (context) => Navigasi(),
