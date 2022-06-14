@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Future logOut(BuildContext context)async{
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.remove('email');
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage(),),);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginPage(),),);
   }
 
 
@@ -33,21 +35,22 @@ class _DashboardPageState extends State<DashboardPage> {
     getEmail();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('DashboardPage'),),
+      appBar: AppBar(title: const Text('DashboardPage'),),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Center(child: email == '' ? Text('') : Text(email)),
-          SizedBox(height: 20,),
+          Center(child: email == '' ? const Text('') : Text(email)),
+          const SizedBox(height: 20,),
           MaterialButton(
             color: Colors.purple,
             onPressed: (){
               logOut(context);
-          },child: Text("Log Out",style: TextStyle(color: Colors.white),),),
+          },child: const Text("Log Out",style: TextStyle(color: Colors.white),),),
         ],
       ),
     );

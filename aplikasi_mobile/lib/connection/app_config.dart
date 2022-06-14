@@ -1,6 +1,6 @@
 class AppConfig {
   static String getUrl(){
-    return "http://10.0.127.69:8000/api/";
+    return "http://192.168.2.33:8000/api/";
   }
   
 }

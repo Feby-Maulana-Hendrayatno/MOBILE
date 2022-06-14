@@ -3,13 +3,11 @@ import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
+import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
 import 'package:aplikasi_mobile/page/icon/search.dart';
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
-// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/page/property/add_product.dart';
 import 'package:aplikasi_mobile/page/property/property.dart';
@@ -28,6 +26,7 @@ class _NavigasiState extends State<Navigasi> {
   int? index = 0;
   final screens = [
     HomePage(),
+    // DetailPage(property: ,),
     // ChatPage(),
     // Search(),
     // PropertyPage(),
@@ -43,7 +42,7 @@ class _NavigasiState extends State<Navigasi> {
       Icon(Icons.home, size: 30),
       // Icon(Icons.search, size: 30),
       Icon(Icons.assignment_sharp, size: 30),
-    
+
       // Icon(Icons.settings, size: 30),
       Icon(Icons.person, size: 30),
     ];
