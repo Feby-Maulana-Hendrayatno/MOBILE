@@ -1,4 +1,6 @@
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/home.dart';
@@ -31,7 +33,9 @@ class _NavigasiState extends State<Navigasi> {
     // PropertyPage(),
     // FileUpload(),
     // DashboardPage(),
-    ProfilePage(),
+    //ProfilePage(),
+    Syarat(),
+    SettingsPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -50,8 +54,8 @@ class _NavigasiState extends State<Navigasi> {
                   IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
           child: CurvedNavigationBar(
             key: navigationKey,
-            color: Color.fromARGB(255, 79, 238, 190),
-            buttonBackgroundColor: Color.fromARGB(255, 76, 156, 221),
+            color: Colors.brown.shade200,
+            buttonBackgroundColor: Color.fromARGB(255, 141, 130, 130),
             backgroundColor: Colors.transparent,
             // backgroundColor: Color.fromARGB(255, 255, 255, 255),
             items: items,

@@ -81,6 +81,7 @@ class _SyaratState extends State<Syarat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.brown[200],
         title: Text("Formulir Syarat"),
         actions: <Widget>[
           IconButton(

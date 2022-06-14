@@ -185,7 +185,7 @@ static String routeName = "/profile";
                       width: double.infinity,
                       child: RaisedButton(
                         onPressed: (){},
-                        color: Colors.black12,
+                      color: Color.fromARGB(255, 141, 130, 130),
                         child: Center(
                           child: Text("Update", style: TextStyle(
                             fontSize: 23,
@@ -228,50 +228,3 @@ class HeaderCurvedContainer extends CustomPainter{
   @override
   bool shouldRepaint(CustomPainter oldDelegate)=>false;
 }
-
-// class ProfilePage extends StatefulWidget {
-//   // const ProfilePage({ Key? key }) : super(key: key);
-
-//   @override
-//   State<ProfilePage> createState() => _ProfilePageState();
-// }
-
-
-//   get SvgPicture => null;
-//   @override
-//   Widget build(BuildContext context) {
-//     var profile;
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Profile"),
-//       ),
-//       body: Column(children: [
-//         SizedBox(
-//           height: 115, 
-//           width: 115, 
-//           child: Stack(
-//             fit: StackFit.expand,
-//             children: [
-//               CircleAvatar(backgroundImage: AssetImage('assets/images/1.jpg'),
-//               ),
-//               SizedBox(
-//                 height: 46, 
-//                 width: 46, 
-//                 child: FlatButton(
-//                   onPressed: () {},
-//                   child: SvgPicture.assets('assets/images/1.jpg'),
-//                 )
-//               )
-//             ],
-//           ), 
-//           )
-//       ]),
-//       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState),
-//     );
-//   }
-
-//   CustomBottomNavBar({selectedMenu}) {}
-// }
-
-// class MenuState {
-// }

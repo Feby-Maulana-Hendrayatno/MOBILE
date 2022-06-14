@@ -1,5 +1,6 @@
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
 import 'package:aplikasi_mobile/page/detail_page.dart';
@@ -43,11 +44,13 @@ class MyApp extends StatelessWidget {
         'chat_page': (context) => ChatPage(),
         'property_page': (context) => PropertyPage(),
         'navigasi_page': (context) => Navigasi(),
-        "profile_page": (context) => ProfilePage(),
+        // "profile_page": (context) => ProfilePage(),
+        "profile_settings": (context) => SettingsPage(),
         "welcome_page": (context) => WelcomePage(),
         'splash_page': (context) => Splash(),
         "dashboard_page": (context) => DashboardPage(),
         "search_page": (context) => Search(),
+        "add_syarat": (context) => Syarat(),
         // "syarat_page": (context) => FileUpload(),
       },
 

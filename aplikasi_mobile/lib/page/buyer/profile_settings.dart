@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'profile_page.dart';
+import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -15,102 +16,141 @@ final String url = 'http://192.168.1.15:8000/api/propertys';
 static String routeName = "/profile";
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      //   elevation: 1,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.of(context).pop();
+      //     },
+      //     icon: Icon(
+      //       Icons.arrow_back,
+      //       color: Colors.brown[300],
+      //     ),
+      //   ),
+      // ),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 1,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.brown[300],
-          ),
+      elevation: 0.0,
+      backgroundColor: Colors.brown[200],
+      leading: IconButton(icon: Icon(Icons.arrow_back),
+      onPressed: () {},
         ),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
-        child: ListView(
+        child:Column(
           children: [
             Text(
-              "Settings",
+              "Profile",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
-            Row(
-              children: [
-                Icon(
-                  Icons.person,
-                  color: Colors.brown[200],
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  "Account",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(2),
+                    width: 115,
+                    height:115,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300, width: 3),
+                      shape: BoxShape.circle,
+                      color: Colors.grey[300],
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/profile.png'),
+                        ),
+                    ),
+                  ),
+            // Divider(
+            //   height: 180,
+            //   thickness: 2,
+            // ),
+          
+            // SizedBox(
+            //   height: 100,
+            // ),
+            // Row(
+            //   children: [
+            //     Icon(
+            //       Icons.person,
+            //       color: Colors.brown[200],
+            //     ),
+            //     SizedBox(
+            //       width: 80,
+            //     ),
+            //     Text(
+            //       "Account",
+            //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //     ),
+            //   ],
+            // ),
+            // buildAccountOptionRow(context, "Change password"),
+            // buildAccountOptionRow(context, "Content settings"),
+            // buildAccountOptionRow(context, "Privacy and security"),
+            // SizedBox(
+            //   height: 40,
+            // ),
+                        
+            // Row(
+            //   children: [
+            //     Icon(
+            //       Icons.volume_up_outlined,
+            //       color: Colors.brown[300],
+            //     ),
+            //     SizedBox(
+            //       width: 8,
+            //     ),
+            //     Text(
+            //       "Notifications",
+            //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //     ),
+            //   ],
+            // ),
+            // Divider(
+            //   height: 15,
+            //   thickness: 2,
+            // ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // buildNotificationOptionRow("New for you", true),
+            // buildNotificationOptionRow("Account activity", true),
+            // buildNotificationOptionRow("Opportunity", false),
+            // SizedBox(
+            //   height: 50,
+            // ),
+          
+
+          ],
+        ),
+          Text(
+              "Prilly",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
-            Divider(
-              height: 15,
-              thickness: 2,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            buildAccountOptionRow(context, "Change password"),
-            buildAccountOptionRow(context, "Content settings"),
-            buildAccountOptionRow(context, "Social"),
-            buildAccountOptionRow(context, "Language"),
-            buildAccountOptionRow(context, "Privacy and security"),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.volume_up_outlined,
-                  color: Colors.brown[300],
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  "Notifications",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            Divider(
-              height: 15,
-              thickness: 2,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            buildNotificationOptionRow("New for you", true),
-            buildNotificationOptionRow("Account activity", true),
-            buildNotificationOptionRow("Opportunity", false),
-            SizedBox(
-              height: 50,
-            ),
+              ElevatedButton(
+                style: 
+                ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(255, 141, 130, 130)),
+                  onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage() ));
+              },child: Text("Edit")),
             Center(
               child: OutlineButton(
-                padding: EdgeInsets.symmetric(horizontal: 40),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 onPressed: () {},
                 child: Text("SIGN OUT",
                     style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
+                        fontSize: 13, letterSpacing: 2.2, color: Colors.black)),
               ),
-            )
-          ],
+            ),
+        ],
         ),
-      ),
+    ),
     );
   }
 
