@@ -4,7 +4,7 @@ import 'package:aplikasi_mobile/page/home/components/constant.dart';
 import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 
 class ProductCard extends StatelessWidget {
@@ -77,12 +77,12 @@ class ProductCard extends StatelessWidget {
                             : kSecondaryColor.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: SvgPicture.asset(
-                        "assets/icons/Heart Icon_2.svg",
-                        color: product.isFavourite
-                            ? Color(0xFFFF4848)
-                            : Color(0xFFDBDEE4),
-                      ),
+                      // child: SvgPicture.asset(
+                      //   "assets/icons/Heart Icon_2.svg",
+                      //   color: product.isFavourite
+                      //       ? Color(0xFFFF4848)
+                      //       : Color(0xFFDBDEE4),
+                      // ),
                     ),
                   ),
                 ],

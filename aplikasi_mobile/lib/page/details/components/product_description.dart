@@ -1,7 +1,7 @@
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
 import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 
 import '../../../model/Product.dart';
@@ -42,12 +42,12 @@ class ProductDescription extends StatelessWidget {
                 bottomLeft: Radius.circular(20),
               ),
             ),
-            child: SvgPicture.asset(
-              "assets/icons/Heart Icon_2.svg",
-              color:
-                  product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
-              height: 16,
-            ),
+            // child: SvgPicture.asset(
+            //   "assets/icons/Heart Icon_2.svg",
+            //   color:
+            //       product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+            //   height: 16,
+            // ),
           ),
         ),
         Padding(

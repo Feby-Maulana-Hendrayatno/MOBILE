@@ -1,7 +1,7 @@
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
 import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
@@ -31,7 +31,7 @@ class IconBtnWithCounter extends StatelessWidget {
               color: kSecondaryColor.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: SvgPicture.asset(svgSrc),
+            // child: SvgPicture.asset(svgSrc),
           ),
           if (numOfitem != 0)
             Positioned(

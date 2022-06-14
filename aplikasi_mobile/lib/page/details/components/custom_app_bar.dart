@@ -1,7 +1,7 @@
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
 import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget {
   final double rating;
@@ -23,21 +23,21 @@ class CustomAppBar extends StatelessWidget {
             SizedBox(
               height: 40,
               width: 40,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(60),
-                  ),
-                  primary: kPrimaryColor,
-                  backgroundColor: Colors.white,
-                  padding: EdgeInsets.zero,
-                ),
-                onPressed: () => Navigator.pop(context),
-                child: SvgPicture.asset(
-                  "assets/icons/Back ICon.svg",
-                  height: 15,
-                ),
-              ),
+              // child: TextButton(
+              //   style: TextButton.styleFrom(
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(60),
+              //     ),
+              //     primary: kPrimaryColor,
+              //     backgroundColor: Colors.white,
+              //     padding: EdgeInsets.zero,
+              //   ),
+              //   onPressed: () => Navigator.pop(context),
+              //   // child: SvgPicture.asset(
+              //   //   "assets/icons/Back ICon.svg",
+              //   //   height: 15,
+              //   // ),
+              // ),
             ),
             Spacer(),
             Container(
@@ -56,7 +56,7 @@ class CustomAppBar extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 5),
-                  SvgPicture.asset("assets/icons/Star Icon.svg"),
+                  // SvgPicture.asset("assets/icons/Star Icon.svg"),
                 ],
               ),
             )
