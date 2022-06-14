@@ -17,7 +17,6 @@ import 'package:sp_util/sp_util.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-
 //import '_page.dart';
 import 'page/start_page.dart';
 
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
         'detail_page': (context) => DetailPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
-        'home_screen':(context) => HomeScreen(),
+        'home_screen': (context) => HomeScreen(),
         'chat_page': (context) => ChatPage(),
         'property_page': (context) => PropertyPage(),
         'navigasi_page': (context) => Navigasi(),
@@ -58,8 +57,9 @@ class MyApp extends StatelessWidget {
       ),
       //yg baru onpresed
 
-      initialRoute: (SpUtil.getBool("isLogin")!) ? 'navigasi_page' : 'splash_page',
-    // initialRoute: 'home_page',
+      initialRoute:
+          (SpUtil.getBool("isLogin")!) ? 'navigasi_page' : 'splash_page',
+      // initialRoute: 'home_page',
 
       // home: AnimatedSplashScreen(
       //   splash: 'assets/images/3.png',
@@ -95,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: Text("Kelompok 4"),
         elevation: 0,
         centerTitle: true,
@@ -124,5 +125,4 @@ class _MyHomePageState extends State<MyHomePage> {
       // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-  
 }

@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Property"),
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.brown[200],
           actions: [
             IconButton(
                 icon: Icon(Icons.logout),

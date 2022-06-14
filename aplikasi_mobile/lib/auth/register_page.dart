@@ -10,12 +10,11 @@ import 'package:http/http.dart' as http;
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'login_page.dart';
 
-
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
-final String url = 'http://192.168.1.15:8000/api/propertys';
-static String routeName = "/login";
+  final String url = 'http://192.168.1.15:8000/api/propertys';
+  static String routeName = "/login";
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -107,8 +106,8 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               Positioned(
                 child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 50, top: 580, right: 0, bottom: 0),
+                  margin: const EdgeInsets.only(
+                      left: 50, top: 580, right: 0, bottom: 0),
                   child: TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(
@@ -127,8 +126,8 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               Positioned(
                 child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 0, top: 580, right: 180, bottom: 0),
+                  margin: const EdgeInsets.only(
+                      left: 0, top: 580, right: 180, bottom: 0),
                   child: TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(
@@ -221,7 +220,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             left: 180.0, top: 18.0, right: 1.0, bottom: 1.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: const Color.fromARGB(255, 141, 130, 130)),
+                              primary:
+                                  const Color.fromARGB(255, 141, 130, 130)),
                           onPressed: () {
                             _doDaftar();
                           },

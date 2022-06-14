@@ -36,7 +36,7 @@ class _NavigasiState extends State<Navigasi> {
       Icon(Icons.home, size: 30),
       // Icon(Icons.search, size: 30),
       Icon(Icons.assignment_sharp, size: 30),
-    
+
       // Icon(Icons.settings, size: 30),
       Icon(Icons.person, size: 30),
     ];

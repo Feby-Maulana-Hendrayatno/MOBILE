@@ -7,8 +7,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sp_util/sp_util.dart';
 import 'package:http/http.dart' as http;
 
-
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -31,7 +29,8 @@ class _LoginPageState extends State<LoginPage> {
     }
     // ProgressDialog progressDialog = ProgressDialog(context: context);
     // progressDialog.show(msg: "Loading......", max: 100);
-    final response = await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
+    final response =
+        await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
       'email': txtUsername.text,
       'password': txtPassword.text,
     }, headers: {
@@ -65,17 +64,16 @@ class _LoginPageState extends State<LoginPage> {
             DialogButton(
               child: const Text("Ok"),
               onPressed: () {
-      // Navigator.pushReplacementNamed(context, 'navigasi_page');
-        Navigator.pushNamed(context, 'navigasi_page');
-          },
-        )
-      ]).show();
+                // Navigator.pushReplacementNamed(context, 'navigasi_page');
+                Navigator.pushNamed(context, 'navigasi_page');
+              },
+            )
+          ]).show();
     } else {
       Alert(context: context, title: "Login Gagal", type: AlertType.error)
           .show();
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -161,8 +159,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Positioned(
                 child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 20, top: 580, right: 0, bottom: 0),
+                  margin: const EdgeInsets.only(
+                      left: 20, top: 580, right: 0, bottom: 0),
                   child: TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(
@@ -181,8 +179,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Positioned(
                 child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 0, top: 580, right: 200, bottom: 0),
+                  margin: const EdgeInsets.only(
+                      left: 0, top: 580, right: 200, bottom: 0),
                   child: TextButton(
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(
@@ -209,8 +207,8 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         controller: txtUsername,
                         decoration: InputDecoration(
-                            hintText: "masukan alamat email anda",
-                            labelText: "Nama Email",
+                            hintText: "Masukan alamat email anda",
+                            labelText: "Email",
                             icon: const Icon(Icons.people),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8.0)),
@@ -223,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         controller: txtPassword,
                         decoration: InputDecoration(
-                            hintText: "masukan password",
+                            hintText: "Masukan password",
                             labelText: "Pasword",
                             icon: const Icon(Icons.password_outlined),
                             border: OutlineInputBorder(
@@ -240,7 +238,8 @@ class _LoginPageState extends State<LoginPage> {
                             left: 220.0, top: 80, right: 1.0, bottom: 1.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: const Color.fromARGB(255, 141, 130, 130)),
+                              primary:
+                                  const Color.fromARGB(255, 141, 130, 130)),
                           onPressed: () {
                             _doLogin();
                           },
