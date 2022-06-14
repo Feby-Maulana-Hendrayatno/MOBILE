@@ -289,8 +289,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
-<<<<<<< HEAD
-=======
   path_drawing:
     dependency: transitive
     description:
@@ -305,7 +303,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
->>>>>>> 068a902691efd19171ab50c3cc79961da37d9643
   path_provider:
     dependency: transitive
     description:
@@ -550,10 +547,5 @@ packages:
     source: hosted
     version: "6.1.0"
 sdks:
-<<<<<<< HEAD
-  dart: ">=2.17.0-0 <3.0.0"
-  flutter: ">=2.10.0-0"
-=======
   dart: ">=2.17.0 <3.0.0"
   flutter: ">=2.11.0-0.1.pre"
->>>>>>> 068a902691efd19171ab50c3cc79961da37d9643

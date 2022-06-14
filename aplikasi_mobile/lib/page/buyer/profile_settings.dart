@@ -127,7 +127,7 @@ static String routeName = "/profile";
           ],
         ),
           Text(
-              "Prilly",
+              "User",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
               ElevatedButton(
