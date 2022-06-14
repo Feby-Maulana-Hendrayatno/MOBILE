@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url = 'http://10.0.127.69:8000/api/perumahan/data';
+  final String url = 'http://propertiku.proyek.ti.polindra.ac.id/api/perumahan/data';
   Future dataPerumahan() async {
     var response =
         await http.get(Uri.parse(AppConfig.getUrl() + 'perumahan/data'));
@@ -299,7 +299,8 @@ class _HomePageState extends State<HomePage> {
                                           height: 140,
                                           width: 200,
                                           child: Image.network(
-                                              "http://10.0.127.69:8000/storage/${snapshot.data['data'][index]['foto']}"),
+                                          
+                                              "http://propertiku.proyek.ti.polindra.ac.id/storage/app/public/${snapshot.data['data'][index]['foto']}"),
                                         ),
                                       ),
                                       Expanded(
