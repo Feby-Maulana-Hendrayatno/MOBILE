@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
+import 'package:aplikasi_mobile/page/home/components/special_offers.dart';
 import 'package:aplikasi_mobile/page/home/home_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url = 'http://propertiku.proyek.ti.polindra.ac.id/api/perumahan/data';
+  final String url =
+      'http://propertiku.proyek.ti.polindra.ac.id/api/perumahan/data';
   Future dataPerumahan() async {
     var response =
         await http.get(Uri.parse(AppConfig.getUrl() + 'perumahan/data'));
@@ -273,6 +275,7 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
               const SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: double.infinity,
                 height: 500,
@@ -299,7 +302,6 @@ class _HomePageState extends State<HomePage> {
                                           height: 140,
                                           width: 200,
                                           child: Image.network(
-                                          
                                               "http://propertiku.proyek.ti.polindra.ac.id/storage/app/public/${snapshot.data['data'][index]['foto']}"),
                                         ),
                                       ),
