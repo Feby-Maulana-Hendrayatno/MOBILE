@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -90,11 +91,11 @@ static String routeName = "/profile";
                             child: CircleAvatar(
                               backgroundColor: Colors.black54,
                               child: IconButton(
+                                onPressed: (){},
                                 icon: Icon(
                                   Icons.edit,
                                   color: Colors.white,
                                   ),
-                                  onPressed: (){},
                                 ),
                             ),
                             ),
@@ -168,23 +169,13 @@ static String routeName = "/profile";
                           obscureText: true,
                           autofocus: true,
                         ),
-                    // textfield(
-                    //   hintText: 'Username', 
-                    // ),
-                    // textfield(
-                    //   hintText: 'Email', 
-                    // ),
-                    // textfield(
-                    //   hintText: 'Password', 
-                    // ),
-                    // textfield(
-                    //   hintText: 'Confirm password', 
-                    // ),
                     Container(
                       height: 35,
                       width: double.infinity,
                       child: RaisedButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+                        },
                       color: Color.fromARGB(255, 141, 130, 130),
                         child: Center(
                           child: Text("Update", style: TextStyle(
@@ -200,12 +191,6 @@ static String routeName = "/profile";
               ),
             ]
           ),
-        //   CustomPaint(child: Container(
-        //     width: MediaQuery.of(context).size.width,
-        //     height: MediaQuery.of(context).size.height,
-        //   ),
-        //   painter: HeaderCurvedContainer(),
-        // ),
         ],
         ),
       )
