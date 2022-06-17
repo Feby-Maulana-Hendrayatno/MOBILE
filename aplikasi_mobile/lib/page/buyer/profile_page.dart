@@ -8,6 +8,7 @@ class ProfilePage extends StatelessWidget {
 final String url = 'http://192.168.1.15:8000/api/propertys';
 static String routeName = "/profile";
 
+
   get txtName => null;
   get txtEmail => null;
   get txtPassword => null;
