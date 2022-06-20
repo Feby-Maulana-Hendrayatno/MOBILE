@@ -1,8 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import, unnecessary_new, avoid_print
 
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/auth/login_page.dart';
+import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:flutter/material.dart';
 // import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:intl/intl.dart';
@@ -13,7 +14,7 @@ import 'package:http/http.dart' as http;
 
 
 class DaftarPage extends StatefulWidget {
-  DaftarPage({Key? key}) : super(key: key);
+  const DaftarPage({Key? key}) : super(key: key);
   
 
   @override
@@ -77,6 +78,7 @@ class _DaftarPageState extends State<DaftarPage> {
 
                 ButtonTheme(
                   minWidth: double.infinity,
+                  // ignore: deprecated_member_use
                   child: RaisedButton(
                     child: Text("Daftar Sekarang",
                         style: TextStyle(color: Colors.white)),
@@ -112,9 +114,8 @@ class _DaftarPageState extends State<DaftarPage> {
     }
     // ProgressDialog progressDialog = ProgressDialog(context: context);
     // progressDialog.show(max: 100, msg: "Harap tunggu...");
-    final response =
-        // await http.post(Uri.http('192.168.1.23:8000', 'api/user'), body: {
-        await http.post(Uri.parse('http://192.168.43.29:8000/api/user'), body: {
+    final response = await http.post(Uri.parse(AppConfig.getUrl() + 'user'),  
+        body: {
       'name': name,
       'email': email,
       'password': password,
@@ -134,15 +135,15 @@ class _DaftarPageState extends State<DaftarPage> {
           title: "Data berhasil disimpan",
           type: AlertType.success,
           buttons: [
-            DialogButton(
-              child: Text("INPUT LAGI"),
-              onPressed: () {
-                Navigator.pop(context);
-                setState(() {
-                  txtName.text = "";
-                });
-              },
-            ),
+            // DialogButton(
+            //   child: Text("INPUT LAGI"),
+            //   onPressed: () {
+            //     Navigator.pop(context);
+            //     setState(() {
+            //       txtName.text = "";
+            //     });
+            //   },
+            // ),
             DialogButton(
               child: Text("LANJUT LOGIN"),
               onPressed: () {

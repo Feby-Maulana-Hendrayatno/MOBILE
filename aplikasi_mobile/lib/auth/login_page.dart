@@ -29,8 +29,10 @@ class _LoginPageState extends State<LoginPage> {
     }
     // ProgressDialog progressDialog = ProgressDialog(context: context);
     // progressDialog.show(msg: "Loading......", max: 100);
-    final response =
-        await http.post(Uri.parse(AppConfig.getUrl() + 'login'), body: {
+    // final response = await http.post(Uri.parse(AppConfig.getUrl() + 'login'), 
+        final response = await http.post(Uri.parse(AppConfig.getUrl() + 'login'), 
+    
+    body: {
       'email': txtUsername.text,
       'password': txtPassword.text,
     }, headers: {
