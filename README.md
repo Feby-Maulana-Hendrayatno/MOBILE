@@ -22,7 +22,6 @@
   <tr>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_data_register_kosong.jpeg" height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_register_berhasil.jpeg"  height="300" width="150"></th>
-    alert_data_register_kosong.jpeg
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/home.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/formulir_syarat.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/profile edit.jpeg"  height="300" width="150"></th>
