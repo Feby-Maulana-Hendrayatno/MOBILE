@@ -1,16 +1,8 @@
 # Tampilan Mobile Propertiku
 
     <tr>
-      <td>Unplash</td>
+      <th>Unplash</th>
       <td><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"> </td>
-    </tr>
-    <tr>
-      <td>Unplash</td>
-      <td><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"> </td>
-    </tr>
-     <tr>
-      <td>Unplash</td>
-      <img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150">
     </tr>
      <tr>
       <td>Unplash</td>
