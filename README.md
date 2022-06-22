@@ -7,6 +7,7 @@
 </li>
 
 
+
 # SOLID Principle (Python)
 Prinsip SOLID pada bahasa pemrograman Python
 <ol>
