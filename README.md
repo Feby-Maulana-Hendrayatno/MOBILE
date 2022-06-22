@@ -22,7 +22,7 @@ Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tan
 Penambahan class tidak boleh sampai memodifikasi class yang sudah ada (existing)
 
 > Contoh **pelanggaran** OCP ❌
-<img src="https://user-images.githubusercontent.com/43178357/170184230-a51f8028-4d63-45a4-8ccb-5f53369dc883.png">
+<img src="https://user-images.githubusercontent.com/43178357/170184230-a51f8028-4d63-45a4-8ccb-5f53369dc883.png"   height: 20px;>
 
 > Contoh **implementasi** OCP ✅
 <img src="https://user-images.githubusercontent.com/43178357/170184396-07b9c8b6-1a86-4add-8c0c-4c506bfbff1d.png" widht:100 >
