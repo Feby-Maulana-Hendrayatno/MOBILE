@@ -217,7 +217,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       const SizedBox(height: 50),
                       Container(
                         margin: const EdgeInsets.only(
-                            left: 180.0, top: 18.0, right: 1.0, bottom: 1.0),
+                            left: 180.0, top: 80.0, right: 1.0, bottom: 1.0),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary:
