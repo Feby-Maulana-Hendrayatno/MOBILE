@@ -14,7 +14,7 @@ Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tan
 
 
 > Contoh **implementasi** SRP ✅
-![class-diagram-Single drawio](https://user-images.githubusercontent.com/79300383/175025076-ae97b148-c2b8-43ed-be9b-426abfdd7d61.png)
+https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg
 
 <br>
 
