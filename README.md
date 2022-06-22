@@ -4,15 +4,11 @@
 <table>
   <tr>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"></th>
-    <th>Savings</th>
+        <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/propertiku 1.jpeg"  height="300" width="150"></th>
   </tr>
   <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
+    <td>Unplash</td>
+    <td>Welcome Page</td>
   </tr>
 </table>
 
