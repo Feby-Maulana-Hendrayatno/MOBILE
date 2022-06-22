@@ -1,3 +1,15 @@
+# Tampilan Mobile Propertiku
+<ol>
+  <ul>
+    <li> Tampilan Splash </li>
+    <img src="https://user-images.githubusercontent.com/43178357/170184396-07b9c8b6-1a86-4add-8c0c-4c506bfbff1d.png" widht:50% height:100% >
+  <ul>
+    <ul>
+    <li> Tampilan Splash </li>
+    <img src="https://user-images.githubusercontent.com/43178357/170184396-07b9c8b6-1a86-4add-8c0c-4c506bfbff1d.png" widht:50% height:100% >
+  <ul>
+</ol>
+
 # SOLID Principle (Python)
 Prinsip SOLID pada bahasa pemrograman Python
 <ol>
