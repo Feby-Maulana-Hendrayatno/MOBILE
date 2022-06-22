@@ -1,12 +1,11 @@
 # Tampilan Mobile Propertiku
-<ol>
-  <ul>
-    <li> Tampilan Splash 
-      <img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"  >
-    </li>
+<li> Tampilan Splash 
+  <img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"  >
+</li>
+<li> Tampilan Splash 
+  <img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"  >
+</li>
 
-  </ul>
-</ol>
 
 # SOLID Principle (Python)
 Prinsip SOLID pada bahasa pemrograman Python
