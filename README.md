@@ -52,7 +52,7 @@ Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tan
 
 
 > Contoh **implementasi** SRP ✅
-<img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"  >
+<th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/single.jpeg"  height="300" width="150"></th>
 
 <br>
 
