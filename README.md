@@ -8,6 +8,8 @@
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/login.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/register.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/home.jpeg"  height="300" width="150"></th>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/formulir_syarat.jpeg"  height="300" width="150"></th>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/profile edit.jpeg"  height="300" width="150"></th>
   </tr>
   <tr>
     <td>Unplash</td>
@@ -15,6 +17,8 @@
     <td>Login Page</td>
     <td>Register</td>
     <td>Home Page</td>
+    <td>Syarat</td>
+    <td>Edit Profile</td>
   </tr>
 </table>
 
