@@ -36,7 +36,7 @@
 </table>
 
 
-# SOLID Principle (Python)
+# SOLID Principle
 Prinsip SOLID pada bahasa pemrograman Python
 <ol>
   <li>Single Responsibility Principle (SRP)</li>
