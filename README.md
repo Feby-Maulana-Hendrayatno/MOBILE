@@ -6,11 +6,13 @@
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/propertiku 1.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/login.jpeg"  height="300" width="150"></th>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/register.jpeg"  height="300" width="150"></th>
   </tr>
   <tr>
     <td>Unplash</td>
     <td>Welcome Page</td>
     <td>Login Page</td>
+    <td>Register</td>
   </tr>
 </table>
 
