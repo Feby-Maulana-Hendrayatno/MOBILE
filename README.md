@@ -12,11 +12,9 @@ Prinsip SOLID pada bahasa pemrograman Python
 ## 1. Single Responsibility Principle (SRP)
 Setiap class tidak boleh memiliki lebih dari satu tanggung jawab, hanya satu tanggung jawab
 
-> Contoh **pelanggaran** SRP ❌
-<img src="https://user-images.githubusercontent.com/43178357/170167822-68085fa4-d285-460a-8452-63f567600e6b.png">
 
 > Contoh **implementasi** SRP ✅
-<img src="https://user-images.githubusercontent.com/43178357/170182068-46edc92b-ab86-40a4-8104-26309eb34f0b.png">
+![class-diagram-Single drawio](https://user-images.githubusercontent.com/79300383/175025076-ae97b148-c2b8-43ed-be9b-426abfdd7d61.png)
 
 <br>
 
