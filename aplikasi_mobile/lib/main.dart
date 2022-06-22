@@ -1,5 +1,4 @@
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
-import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
 import 'package:aplikasi_mobile/page/dahboard.dart';
@@ -15,17 +14,13 @@ import 'package:aplikasi_mobile/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:sp_util/sp_util.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-//import '_page.dart';
-import 'page/start_page.dart';
 
 // void main() => runApp(MyApp());
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SpUtil.getInstance();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -36,22 +31,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       routes: {
-        'register_page': (context) => RegisterPage(),
-        'login_page': (context) => LoginPage(),
-        'detail_page': (context) => DetailPage(),
+        'register_page': (context) => const RegisterPage(),
+        'login_page': (context) => const LoginPage(),
+        'detail_page': (context) => const DetailPage(),
         //'daftar_page': (context) => DaftarPage(),
         'home_page': (context) => HomePage(),
-        'home_screen': (context) => HomeScreen(),
-        'chat_page': (context) => ChatPage(),
-        'property_page': (context) => PropertyPage(),
-        'navigasi_page': (context) => Navigasi(),
+        'home_screen': (context) => const HomeScreen(),
+        'chat_page': (context) => const ChatPage(),
+        'property_page': (context) => const PropertyPage(),
+        'navigasi_page': (context) => const Navigasi(),
         // "profile_page": (context) => ProfilePage(),
-        "profile_settings": (context) => SettingsPage(),
-        "welcome_page": (context) => WelcomePage(),
-        'splash_page': (context) => Splash(),
+        "profile_settings": (context) => const SettingsPage(),
+        "welcome_page": (context) => const WelcomePage(),
+        'splash_page': (context) => const Splash(),
         "dashboard_page": (context) => DashboardPage(),
-        "search_page": (context) => Search(),
-        "add_syarat": (context) => Syarat(),
+        "search_page": (context) => const Search(),
+        "add_syarat": (context) => const Syarat(),
         // "syarat_page": (context) => FileUpload(),
       },
 
@@ -85,13 +80,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.blue,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text("Kelompok 4"),
+        title: const Text("Kelompok 4"),
         elevation: 0,
         centerTitle: true,
       ),
@@ -107,8 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Saya belajar flutter"),
-            SizedBox(
+            const Text("Saya belajar flutter"),
+            const SizedBox(
               height: 40,
             ),
             const Text(

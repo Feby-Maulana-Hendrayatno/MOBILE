@@ -278,15 +278,15 @@ class _RegisterPageState extends State<RegisterPage> {
           title: "Data berhasil disimpan",
           type: AlertType.success,
           buttons: [
-            DialogButton(
-              child: const Text("INPUT LAGI"),
-              onPressed: () {
-                Navigator.pop(context);
-                setState(() {
-                  txtName.text = "";
-                });
-              },
-            ),
+            // DialogButton(
+            //   child: const Text("INPUT LAGI"),
+            //   onPressed: () {
+            //     Navigator.pop(context);
+            //     setState(() {
+            //       txtName.text = "";
+            //     });
+            //   },
+            // ),
             DialogButton(
               child: const Text("LANJUT LOGIN"),
               onPressed: () {

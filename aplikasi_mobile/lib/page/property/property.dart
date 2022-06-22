@@ -1,15 +1,14 @@
+// ignore_for_file: avoid_print, unused_field
+
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/connection/app_config.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sp_util/sp_util.dart';
 import 'package:http/http.dart' as http;
 
 class PropertyPage extends StatefulWidget {
-  PropertyPage({Key? key, String? title}) : super(key: key);
+  const PropertyPage({Key? key, String? title}) : super(key: key);
 
   @override
   State<PropertyPage> createState() => _PropertyPageState();
@@ -30,7 +29,7 @@ class _PropertyPageState extends State<PropertyPage> {
     return json.decode(response.body);
   }
 
-  int _current = 0;
+  final int _current = 0;
   final CarouselController _controller = CarouselController();
   final List<String> imgList = [
     'assets/images/1.jpg',
@@ -41,13 +40,6 @@ class _PropertyPageState extends State<PropertyPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    final items = <Widget>[
-      Icon(Icons.home, size: 30),
-      Icon(Icons.search, size: 30),
-      Icon(Icons.favorite, size: 30),
-      Icon(Icons.settings, size: 30),
-      Icon(Icons.person, size: 30),
-    ];
     dataPerumahan();
     return Scaffold(
         // bottomNavigationBar: Theme(
@@ -69,12 +61,12 @@ class _PropertyPageState extends State<PropertyPage> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => PropertyPage()));
+                context, MaterialPageRoute(builder: (context) => const PropertyPage()));
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
         appBar: AppBar(
-          title: Text("Property"),
+          title: const Text("Property"),
           backgroundColor: Colors.amber,
         ),
         body: FutureBuilder(
@@ -85,7 +77,7 @@ class _PropertyPageState extends State<PropertyPage> {
                 return ListView.builder(
                     itemCount: snapshot.data['data'].length,
                     itemBuilder: (context, index) {
-                      return Container(
+                      return SizedBox(
                         height:400,
                         child: Card(
                           elevation: 5,
@@ -97,7 +89,7 @@ class _PropertyPageState extends State<PropertyPage> {
                                   decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.circular(15.0)),
-                                  padding: EdgeInsets.all(5),
+                                  padding: const EdgeInsets.all(5),
                                   height: 220,
                                   width: 220,
                                   child: Image.network(
@@ -106,7 +98,7 @@ class _PropertyPageState extends State<PropertyPage> {
                               ),
                               Expanded(
                                 child: Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -116,7 +108,7 @@ class _PropertyPageState extends State<PropertyPage> {
                                         child: Text(
                                           snapshot.data['data'][index]
                                               ['nama_perumahan'],
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -139,7 +131,7 @@ class _PropertyPageState extends State<PropertyPage> {
                       );
                     });
               } else {
-                return Text('Data Error');
+                return const Text('Data Error');
               }
             }));
   }

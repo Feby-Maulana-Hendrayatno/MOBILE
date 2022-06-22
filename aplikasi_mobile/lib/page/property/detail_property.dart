@@ -1,23 +1,22 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
-import 'package:aplikasi_mobile/page/property/property.dart';
 
 class ProductDetail extends StatelessWidget {
   final Map product;
 
-  ProductDetail({required this.product});
+  const ProductDetail({required this.product});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Detail"),
+        title: const Text("Product Detail"),
       ),
       body: Column(
         children: [
-          Container(
-            child: Image.network(product['image']),
-          ),
-          SizedBox(
+          Image.network(product['image']),
+          const SizedBox(
             height: 20, 
           ),
           Padding(
@@ -27,10 +26,10 @@ class ProductDetail extends StatelessWidget {
               children: [
                 Text(
                   product['price'], 
-                  style: TextStyle(fontSize:22),
+                  style: const TextStyle(fontSize:22),
                 ),
                 Row(
-                children: [
+                children: const [
                 Icon(Icons.edit),
                 Icon(Icons.delete),
                 ],

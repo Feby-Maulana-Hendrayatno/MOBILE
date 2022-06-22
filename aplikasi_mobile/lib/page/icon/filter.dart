@@ -8,10 +8,9 @@ class Filter extends StatefulWidget {
 }
 
 class _FilterState extends State<Filter> {
-  var selectedRange = RangeValues(400, 1000);
+  var selectedRange = const RangeValues(400, 1000);
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     selectedRange;
   }
@@ -19,12 +18,12 @@ class _FilterState extends State<Filter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 24, left: 24, top: 32, bottom: 30),
+      padding: const EdgeInsets.only(right: 24, left: 24, top: 32, bottom: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            children: [
+            children: const [
               Text(
                 "Filter",
                 style: TextStyle(
@@ -43,11 +42,11 @@ class _FilterState extends State<Filter> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 32,
           ),
           Row(
-            children: [
+            children: const [
               Text(
                 "Price",
                 style: TextStyle(
@@ -80,7 +79,7 @@ class _FilterState extends State<Filter> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 r"$70k",
                 style: TextStyle(
@@ -95,10 +94,10 @@ class _FilterState extends State<Filter> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Text(
+          const Text(
             "Rooms",
             style: TextStyle(
               fontSize: 16,
@@ -125,7 +124,7 @@ class _FilterState extends State<Filter> {
       width: 65,
       decoration: BoxDecoration(
           color: selected ? Colors.blue[900] : Colors.transparent,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(5),
           ),
           border: Border.all(

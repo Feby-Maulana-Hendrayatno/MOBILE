@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +6,8 @@ class ProfilePage extends StatelessWidget {
 
 final String url = 'http://192.168.1.15:8000/api/propertys';
 static String routeName = "/profile";
+
+  const ProfilePage({Key? key}) : super(key: key);
 
 
   get txtName => null;
@@ -23,7 +24,7 @@ static String routeName = "/profile";
           child: TextField(
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             letterSpacing: 1.5,
             color: Colors.black54,
             fontWeight: FontWeight.bold,
@@ -44,7 +45,7 @@ static String routeName = "/profile";
       appBar: AppBar(
       elevation: 0.0,
       backgroundColor: Colors.brown[200],
-      leading: IconButton(icon: Icon(Icons.arrow_back),
+      leading: IconButton(icon: const Icon(Icons.arrow_back),
       onPressed: () {},
         ),
       ),
@@ -57,7 +58,7 @@ static String routeName = "/profile";
               Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
+              const Padding(
               padding: EdgeInsets.all(2),
               child: Text(
               "Profile",
@@ -72,14 +73,14 @@ static String routeName = "/profile";
               Stack(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(2),
+                    padding: const EdgeInsets.all(2),
                     width: 115,
                     height:115,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 3),
                       shape: BoxShape.circle,
                       color: Colors.grey[300],
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/profile.png'),
                         ),
@@ -88,12 +89,12 @@ static String routeName = "/profile";
                   Positioned(
                     bottom: 0,
                     right:0,
-                    child: Padding(padding: EdgeInsets.only(bottom: 10, left: 10),
+                    child: Padding(padding: const EdgeInsets.only(bottom: 10, left: 10),
                             child: CircleAvatar(
                               backgroundColor: Colors.black54,
                               child: IconButton(
                                 onPressed: (){},
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.edit,
                                   color: Colors.white,
                                   ),
@@ -109,76 +110,78 @@ static String routeName = "/profile";
               Container(
                 height: 330,
                 width: 350,
-                margin: EdgeInsets.symmetric(horizontal: 5),
+                margin: const EdgeInsets.symmetric(horizontal: 5),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextFormField(
                           controller: txtName,
+                          // ignore: unnecessary_new
                           decoration: new InputDecoration(
                               hintText: "masukan nama lengkap anda",
                               labelText: "Nama Lengkap",
-                              icon: Icon(Icons.people),
+                              icon: const Icon(Icons.people),
                               border: OutlineInputBorder(
-                                  borderRadius: new BorderRadius.circular(8.0)),
+                                  borderRadius: BorderRadius.circular(8.0)),
                               hintStyle: GoogleFonts.oswald(
-                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  color: const Color.fromARGB(255, 223, 151, 70),
                                   fontSize: 12)),
                           autofocus: true,
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         TextFormField(
                           controller: txtEmail,
-                          decoration: new InputDecoration(
+                          decoration: InputDecoration(
                               hintText: "masukan email anda",
                               labelText: "Email",
-                              icon: Icon(Icons.message),
+                              icon: const Icon(Icons.message),
                               border: OutlineInputBorder(
-                                  borderRadius: new BorderRadius.circular(8.0)),
+                                  borderRadius: BorderRadius.circular(8.0)),
                               hintStyle: GoogleFonts.oswald(
-                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  color: const Color.fromARGB(255, 223, 151, 70),
                                   fontSize: 12)),
                           autofocus: true,
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         TextFormField(
                           controller: txtPassword,
-                          decoration: new InputDecoration(
+                          decoration: InputDecoration(
                               hintText: "masukan password",
                               labelText: "Password",
-                              icon: Icon(Icons.password_outlined),
+                              icon: const Icon(Icons.password_outlined),
                               border: OutlineInputBorder(
-                                  borderRadius: new BorderRadius.circular(8.0)),
+                                  borderRadius: BorderRadius.circular(8.0)),
                               hintStyle: GoogleFonts.oswald(
-                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  color: const Color.fromARGB(255, 223, 151, 70),
                                   fontSize: 12)),
                           obscureText: true,
                           autofocus: true,
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         TextFormField(
                           controller: txtPassword,
-                          decoration: new InputDecoration(
+                          decoration: InputDecoration(
                               hintText: "konfirmasi password",
                               labelText: "Confirm Password",
-                              icon: Icon(Icons.password_outlined),
+                              icon: const Icon(Icons.password_outlined),
                               border: OutlineInputBorder(
-                                  borderRadius: new BorderRadius.circular(8.0)),
+                                  borderRadius: BorderRadius.circular(8.0)),
                               hintStyle: GoogleFonts.oswald(
-                                  color: Color.fromARGB(255, 223, 151, 70),
+                                  color: const Color.fromARGB(255, 223, 151, 70),
                                   fontSize: 12)),
                           obscureText: true,
                           autofocus: true,
                         ),
-                    Container(
+                    SizedBox(
                       height: 35,
                       width: double.infinity,
+                      // ignore: deprecated_member_use
                       child: RaisedButton(
                         onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
                         },
-                      color: Color.fromARGB(255, 141, 130, 130),
-                        child: Center(
+                      color: const Color.fromARGB(255, 141, 130, 130),
+                        child: const Center(
                           child: Text("Update", style: TextStyle(
                             fontSize: 23,
                             color: Colors.white,

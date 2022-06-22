@@ -1,8 +1,7 @@
-import 'dart:convert';
+
+// ignore_for_file: avoid_print
 
 import 'package:aplikasi_mobile/model/data_dummy.dart';
-import 'package:aplikasi_mobile/model/produk_model.dart';
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 
 import 'section_title.dart';
@@ -17,14 +16,14 @@ class SpecialOffers extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: SectionTitle(
             title: "Special for you",
             press: () {},
           ),
         ),
-        SizedBox(height: 10),
-        Container(
+        const SizedBox(height: 10),
+        SizedBox(
           width: double.infinity,
           height: 150,
           child: ListView.builder(
@@ -45,6 +44,7 @@ class SpecialOffers extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class SpecialOfferCard extends StatelessWidget {
   SpecialOfferCard({
     // this.produkModel,
@@ -62,7 +62,7 @@ class SpecialOfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 20),
       child: GestureDetector(
         onTap: press,
         child: SizedBox(
@@ -82,24 +82,24 @@ class SpecialOfferCard extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFF343434).withOpacity(0.4),
-                        Color(0xFF343434).withOpacity(0.15),
+                        const Color(0xFF343434).withOpacity(0.4),
+                        const Color(0xFF343434).withOpacity(0.15),
                       ],
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 15.0,
                     vertical: 10,
                   ),
                   child: Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       children: [
                         TextSpan(
                           text: typeRumah,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),

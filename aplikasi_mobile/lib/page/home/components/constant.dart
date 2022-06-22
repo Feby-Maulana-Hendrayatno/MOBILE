@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
-final headingStyle = TextStyle(
+const headingStyle = TextStyle(
   fontSize: (28),
   fontWeight: FontWeight.bold,
   color: Colors.black,
@@ -35,7 +37,7 @@ const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
 
 final otpInputDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: (15)),
+  contentPadding: const EdgeInsets.symmetric(vertical: (15)),
   border: outlineInputBorder(),
   focusedBorder: outlineInputBorder(),
   enabledBorder: outlineInputBorder(),
@@ -44,6 +46,6 @@ final otpInputDecoration = InputDecoration(
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(15),
-    borderSide: BorderSide(color: kTextColor),
+    borderSide: const BorderSide(color: kTextColor),
   );
 }

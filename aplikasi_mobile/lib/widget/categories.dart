@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -22,12 +19,12 @@ class _CategoriesState extends State<Categories> {
         });
       },
       child: Padding(
-        padding: EdgeInsets.only(right: 30 / 3),
+        padding: const EdgeInsets.only(right: 30 / 3),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20 / 2),
+          padding: const EdgeInsets.symmetric(horizontal: 20 / 2),
           decoration: BoxDecoration(
               color: selectedCategoriesIndex == index
-                  ? Color.fromARGB(255, 13, 44, 70)
+                  ? const Color.fromARGB(255, 13, 44, 70)
                   : Colors.black.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),),
           child: Center(
@@ -53,10 +50,10 @@ class _CategoriesState extends State<Categories> {
         top: 30 / 2,
         bottom: 15,
       ),
-      child: Container(
+      child: SizedBox(
         height: size.height * 0.05,
         child: ListView.builder(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: 1,
           itemBuilder: (context, index) {

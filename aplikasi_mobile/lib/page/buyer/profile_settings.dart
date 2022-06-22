@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, override_on_non_overriding_member, unused_field, non_constant_identifier_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
@@ -5,6 +7,8 @@ import 'profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -14,6 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
 final String url = 'http://192.168.1.15:8000/api/propertys';
 static String routeName = "/profile";
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(
@@ -32,33 +37,33 @@ static String routeName = "/profile";
       appBar: AppBar(
       elevation: 0.0,
       backgroundColor: Colors.brown[200],
-      leading: IconButton(icon: Icon(Icons.arrow_back),
+      leading: IconButton(icon: const Icon(Icons.arrow_back),
       onPressed: () {},
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
         child:Column(
           children: [
-            Text(
+            const Text(
               "Profile",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
               Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(2),
+                    padding: const EdgeInsets.all(2),
                     width: 115,
                     height:115,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 3),
                       shape: BoxShape.circle,
                       color: Colors.grey[300],
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/profile.png'),
                         ),
@@ -126,7 +131,7 @@ static String routeName = "/profile";
 
           ],
         ),
-          Text(
+          const Text(
               "User",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
@@ -135,15 +140,15 @@ static String routeName = "/profile";
                 ElevatedButton.styleFrom(
                   primary: const Color.fromARGB(255, 141, 130, 130)),
                   onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage() ));
-              },child: Text("Edit")),
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage() ));
+              },child: const Text("Edit")),
             Center(
               child: OutlineButton(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 onPressed: () {},
-                child: Text("SIGN OUT",
+                child: const Text("SIGN OUT",
                     style: TextStyle(
                         fontSize: 13, letterSpacing: 2.2, color: Colors.black)),
               ),
@@ -185,18 +190,19 @@ static String routeName = "/profile";
                 title: Text(title),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Text("Option 1"),
                     Text("Option 2"),
                     Text("Option 3"),
                   ],
                 ),
                 actions: [
+                  // ignore: deprecated_member_use
                   FlatButton(
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: Text("Close")),
+                      child: const Text("Close")),
                 ],
               );
             });
@@ -214,7 +220,7 @@ static String routeName = "/profile";
                 color: Colors.grey[600],
               ),
             ),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios,
               color: Colors.grey,
             ),

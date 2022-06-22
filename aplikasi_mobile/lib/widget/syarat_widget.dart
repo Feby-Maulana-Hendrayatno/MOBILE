@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class TextFieldSyarat extends StatelessWidget {
@@ -19,7 +21,7 @@ class TextFieldSyarat extends StatelessWidget {
     final inputBorder =
         OutlineInputBorder(borderSide: Divider.createBorderSide(context));
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       child: TextField(
         controller: textEditingController,
         decoration: InputDecoration(
@@ -29,7 +31,7 @@ class TextFieldSyarat extends StatelessWidget {
           focusedBorder: inputBorder,
           enabledBorder: inputBorder,
           filled: true,
-          contentPadding: EdgeInsets.all(8),
+          contentPadding: const EdgeInsets.all(8),
         ),
         keyboardType: textInputType!,
         obscureText: isPass!,

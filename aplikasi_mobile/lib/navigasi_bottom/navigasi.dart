@@ -1,21 +1,12 @@
-import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
-import 'package:aplikasi_mobile/page/buyer/profile_page.dart';
-import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
-import 'package:aplikasi_mobile/page/dahboard.dart';
-import 'package:aplikasi_mobile/page/detail_page.dart';
 import 'package:aplikasi_mobile/page/home.dart';
-import 'package:aplikasi_mobile/page/icon/search.dart';
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:aplikasi_mobile/page/property/add_product.dart';
-import 'package:aplikasi_mobile/page/property/property.dart';
-import '../page/chat_page.dart';
 import '../page/syarat/add_syarat.dart';
 
 class Navigasi extends StatefulWidget {
-  Navigasi({Key? key}) : super(key: key);
+  const Navigasi({Key? key}) : super(key: key);
 
   @override
   State<Navigasi> createState() => _NavigasiState();
@@ -33,34 +24,34 @@ class _NavigasiState extends State<Navigasi> {
     // FileUpload(),
     // DashboardPage(),
     //ProfilePage(),
-    Syarat(),
-    SettingsPage(),
+    const Syarat(),
+    const SettingsPage(),
   ];
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      Icon(Icons.home, size: 30),
+      const Icon(Icons.home, size: 30),
       // Icon(Icons.search, size: 30),
-      Icon(Icons.assignment_sharp, size: 30),
+      const Icon(Icons.assignment_sharp, size: 30),
 
       // Icon(Icons.settings, size: 30),
-      Icon(Icons.person, size: 30),
+      const Icon(Icons.person, size: 30),
     ];
     return Scaffold(
         bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(
-              iconTheme:
-                  IconThemeData(color: Color.fromARGB(255, 255, 255, 255))),
+              iconTheme: const IconThemeData(
+                  color: Color.fromARGB(255, 255, 255, 255))),
           child: CurvedNavigationBar(
             key: navigationKey,
             color: Colors.brown.shade200,
-            buttonBackgroundColor: Color.fromARGB(255, 141, 130, 130),
+            buttonBackgroundColor: const Color.fromARGB(255, 141, 130, 130),
             backgroundColor: Colors.transparent,
             // backgroundColor: Color.fromARGB(255, 255, 255, 255),
             items: items,
             height: 60,
             animationCurve: Curves.easeInOut,
-            animationDuration: Duration(milliseconds: 650),
+            animationDuration: const Duration(milliseconds: 650),
             index: index!,
             onTap: (index) => setState(() => this.index = index),
           ),

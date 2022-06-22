@@ -1,5 +1,4 @@
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -24,7 +23,7 @@ class IconBtnWithCounter extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             height: 46,
             width: 46,
             decoration: BoxDecoration(
@@ -41,14 +40,14 @@ class IconBtnWithCounter extends StatelessWidget {
                 height: 16,
                 width: 16,
                 decoration: BoxDecoration(
-                  color: Color(0xFFFF4848),
+                  color: const Color(0xFFFF4848),
                   shape: BoxShape.circle,
                   border: Border.all(width: 1.5, color: Colors.white),
                 ),
                 child: Center(
                   child: Text(
                     "$numOfitem",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 10,
                       height: 1,
                       fontWeight: FontWeight.w600,

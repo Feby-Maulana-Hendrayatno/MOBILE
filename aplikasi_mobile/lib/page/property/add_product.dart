@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:convert';
 
 import 'package:aplikasi_mobile/page/property/property.dart';
@@ -7,11 +9,13 @@ import 'package:http/http.dart' as http;
 
 class AddProduct extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _nameController = new TextEditingController();
-  TextEditingController _descriptionController = new TextEditingController();
-  TextEditingController _priceController = new TextEditingController();
-  TextEditingController _locationController = new TextEditingController();
-  TextEditingController _imageController = new TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
+  final TextEditingController _imageController = TextEditingController();
+
+  AddProduct({Key? key}) : super(key: key);
 
   Future saveProduct() async {
     final response = 
@@ -30,14 +34,14 @@ class AddProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Product'),
+        title: const Text('Add Product'),
       ),
       body: Form(
         key: _formKey,
         child: Column(children: [
           TextFormField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: "Name"),
+              decoration: const InputDecoration(labelText: "Name"),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Please enter product name";
@@ -46,7 +50,7 @@ class AddProduct extends StatelessWidget {
               }),
           TextFormField(
               controller: _descriptionController,
-              decoration: InputDecoration(labelText: "Description"),
+              decoration: const InputDecoration(labelText: "Description"),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Please enter product Description";
@@ -55,7 +59,7 @@ class AddProduct extends StatelessWidget {
               }),
           TextFormField(
               controller: _locationController,
-              decoration: InputDecoration(labelText: "location"),
+              decoration: const InputDecoration(labelText: "location"),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Please enter product Description";
@@ -64,7 +68,7 @@ class AddProduct extends StatelessWidget {
               }),
           TextFormField(
               controller: _priceController,
-              decoration: InputDecoration(labelText: "Price"),
+              decoration: const InputDecoration(labelText: "Price"),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Please enter product Price";
@@ -73,14 +77,14 @@ class AddProduct extends StatelessWidget {
               }),
           TextFormField(
               controller: _imageController,
-              decoration: InputDecoration(labelText: "Image"),
+              decoration: const InputDecoration(labelText: "Image"),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "Please enter product Image";
                 }
                 return null;
               }),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
@@ -90,9 +94,9 @@ class AddProduct extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PropertyPage(),
+                        builder: (context) => const PropertyPage(),
                       ));
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Product berhasil di Tambah"),
                     ));
                   });
@@ -100,7 +104,7 @@ class AddProduct extends StatelessWidget {
                 }
                 // print(__nameController.text);
               },
-              child: Text("Save"))
+              child: const Text("Save"))
         ]),
       ),
     );

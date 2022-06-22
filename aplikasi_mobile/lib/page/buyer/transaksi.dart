@@ -1,13 +1,11 @@
+// ignore_for_file: unused_field, avoid_print
+
 import 'dart:io';
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
-import 'package:aplikasi_mobile/page/home.dart';
 
-import '../../widget/syarat_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:async/async.dart';
 
 class Transaksi extends StatefulWidget {
   const Transaksi({Key? key}) : super(key: key);
@@ -31,8 +29,8 @@ class _TransaksiState extends State<Transaksi> {
   String? _extension;
   bool _isLoading = false;
   bool _userAborted = false;
-  bool _multiPick = false;
-  FileType _pickingType = FileType.any;
+  final bool _multiPick = false;
+  final FileType _pickingType = FileType.any;
 
   void _ambilFile() async {
     var path = await filePicker.getDirectoryPath();
@@ -53,31 +51,31 @@ class _TransaksiState extends State<Transaksi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Transaksi Pembayaran"),
+        title: const Text("Transaksi Pembayaran"),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               _ambilFile();
             },
-            icon: Icon(Icons.file_upload),
+            icon: const Icon(Icons.file_upload),
           )
         ],
       ),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: ListView(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               "Silahkan Upload Bukti Pembayaran Di bawah ini",
               style: TextStyle(
                 fontSize: 20,
                 color: Color.fromARGB(255, 97, 78, 84),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
               width: 30,
             ),
@@ -85,11 +83,11 @@ class _TransaksiState extends State<Transaksi> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto Bukti Pembayaran"),
+                const Text("Foto Bukti Pembayaran"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageBukti(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -98,7 +96,7 @@ class _TransaksiState extends State<Transaksi> {
             imageBukti == null
                 ? const Text("Pilih Gambar")
                 : WidgetGmbar(imageFile: imageBukti),
-            SizedBox(
+            const SizedBox(
               height: 30,
               width: 30,
             ),
@@ -109,10 +107,10 @@ class _TransaksiState extends State<Transaksi> {
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Navigasi()));
+                        MaterialPageRoute(builder: (context) => const Navigasi()));
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Data Berhasil Dikirim')));
                   },

@@ -1,4 +1,3 @@
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SectionTitle extends StatelessWidget {
@@ -18,16 +17,17 @@ class SectionTitle extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             color: Colors.black,
           ),
         ),
         GestureDetector(
           onTap: press,
-          child: Text(
+          child: const Text(
             "See More",
-            style: TextStyle(color: Color(0xFFBBBBBB)),
+            // ignore: unnecessary_const
+            style: const TextStyle(color: const Color(0xFFBBBBBB)),
           ),
         ),
       ],

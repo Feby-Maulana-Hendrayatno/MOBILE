@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:aplikasi_mobile/model/property.dart';
 import 'package:aplikasi_mobile/page/icon/detail.dart';
 import 'package:aplikasi_mobile/page/icon/filter.dart';
@@ -19,7 +21,7 @@ class _SearchState extends State<Search> {
       backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: const [
         ],
       ),
     );
@@ -27,10 +29,10 @@ class _SearchState extends State<Search> {
 
   Widget buildFilter(String filterName) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12),
-      margin: EdgeInsets.only(right: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(5),
         ),
         border: Border.all(color: Colors.grey, width: 1),
@@ -38,7 +40,7 @@ class _SearchState extends State<Search> {
       child: Center(
         child: Text(
           filterName,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -49,7 +51,7 @@ class _SearchState extends State<Search> {
         context: context,
         builder: (BuildContext context) {
           return Wrap(
-            children: [Filter()],
+            children: const [Filter()],
           );
         });
   }
@@ -75,9 +77,9 @@ class _SearchState extends State<Search> {
             ));
       },
       child: Card(
-        margin: EdgeInsets.only(bottom: 24),
+        margin: const EdgeInsets.only(bottom: 24),
         clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(15),
           ),
@@ -91,7 +93,7 @@ class _SearchState extends State<Search> {
             ),
           ),
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -108,16 +110,16 @@ class _SearchState extends State<Search> {
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.yellow[700],
-                    borderRadius: BorderRadius.all(
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(5),
                     ),
                   ),
                   width: 80,
-                  padding: EdgeInsets.symmetric(vertical: 4),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Center(
                     child: Text(
                       "For ${property.label}",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -133,7 +135,7 @@ class _SearchState extends State<Search> {
                       children: [
                         Text(
                           property.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -141,7 +143,7 @@ class _SearchState extends State<Search> {
                         ),
                         Text(
                           r"$" + property.price,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -149,40 +151,40 @@ class _SearchState extends State<Search> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_on,
                           color: Colors.white,
                           size: 14,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 4,
                         ),
                         Text(
                           property.location,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 14,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.zoom_out_map,
                           color: Colors.white,
                           size: 16,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 4,
                         ),
                         Text(
                           property.sqm + " sq/m",
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 14,
                           ),
@@ -196,12 +198,12 @@ class _SearchState extends State<Search> {
                           color: Colors.yellow[700],
                           size: 14,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 4,
                         ),
                         Text(
                           property.review + " Reviews",
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 14,
                           ),

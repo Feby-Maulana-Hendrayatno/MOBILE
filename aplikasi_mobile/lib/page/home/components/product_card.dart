@@ -1,7 +1,5 @@
-import 'package:aplikasi_mobile/model/product.dart';
 import 'package:aplikasi_mobile/page/details/details_screen.dart';
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -21,7 +19,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 20),
       child: SizedBox(
         width: width,
         child: GestureDetector(
@@ -36,7 +34,7 @@ class ProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1.02,
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
@@ -50,7 +48,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 product.title,
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.black),
                 maxLines: 2,
               ),
               Row(
@@ -58,7 +56,7 @@ class ProductCard extends StatelessWidget {
                 children: [
                   Text(
                     "\$${product.price}",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
@@ -68,7 +66,7 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     onTap: () {},
                     child: Container(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       height: 28,
                       width: 28,
                       decoration: BoxDecoration(

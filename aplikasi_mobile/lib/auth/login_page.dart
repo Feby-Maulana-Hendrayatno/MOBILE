@@ -171,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'navigasi_page');
+                      Navigator.pushNamed(context, 'register_page');
                     },
                     child: const Text('Daftar',
                         style: TextStyle(

@@ -1,4 +1,3 @@
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../../model/Product.dart';
@@ -53,8 +52,8 @@ class _ProductImagesState extends State<ProductImages> {
       },
       child: AnimatedContainer(
         duration: defaultDuration,
-        margin: EdgeInsets.only(right: 15),
-        padding: EdgeInsets.all(8),
+        margin: const EdgeInsets.only(right: 15),
+        padding: const EdgeInsets.all(8),
         height: 48,
         width: 48,
         decoration: BoxDecoration(

@@ -53,10 +53,14 @@
 //   }
 // }
 
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/model/property.dart';
 
 class DetailPage extends StatelessWidget {
+  const DetailPage({Key? key}) : super(key: key);
+
   // final Property property;
   // DetailPage({required this.property, Key? key}) : super(key: key);
 
@@ -88,25 +92,25 @@ class DetailPage extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          Container(
+          SizedBox(
             height: size.height * 0.35,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
                         onDoubleTap: () => Navigator.pop(context),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back,
                           color: Colors.white,
                           size: 24,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.notifications_none,
                         color: Colors.white,
                         size: 28,
@@ -118,14 +122,14 @@ class DetailPage extends StatelessWidget {
                   child: Container(),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.brown[200],
                         borderRadius: BorderRadius.circular(5)),
                     width: 80,
-                    padding: EdgeInsets.symmetric(vertical: 4),
-                    child: Center(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: const Center(
                       child: Text(
                         "property",
                         // "For ${property.label}",
@@ -139,11 +143,11 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "property",
                         // property.name,
                         style: TextStyle(
@@ -155,7 +159,7 @@ class DetailPage extends StatelessWidget {
                       Container(
                         height: 50,
                         width: 50,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                         ),
@@ -171,7 +175,7 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 24,
                     right: 24,
                     top: 8,
@@ -181,7 +185,7 @@ class DetailPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
-                        children: [
+                        children: const [
                           Icon(
                             Icons.location_on,
                             color: Colors.black,
@@ -228,7 +232,7 @@ class DetailPage extends StatelessWidget {
                             color: Colors.brown[200],
                             size: 16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 4,
                           ),
                           // Text(
@@ -252,9 +256,10 @@ class DetailPage extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: size.height * 0.65,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
+                // ignore: unnecessary_const
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
@@ -265,14 +270,14 @@ class DetailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
                             height: 65,
                             width: 65,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               // image: DecorationImage(
                               //   image: AssetImage(property.ownerImage),
                               //   fit: BoxFit.cover,
@@ -280,20 +285,20 @@ class DetailPage extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "James Milner",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 4,
                               ),
                               Text(
@@ -305,7 +310,7 @@ class DetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           Row(
                             children: [
                               Container(
@@ -323,7 +328,7 @@ class DetailPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Container(
@@ -346,11 +351,11 @@ class DetailPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 14,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         right: 24,
                         left: 24,
                         bottom: 24,
@@ -365,7 +370,7 @@ class DetailPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         right: 24,
                         left: 24,
@@ -380,7 +385,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         right: 24,
                         left: 24,
                         bottom: 24,
@@ -394,7 +399,7 @@ class DetailPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         right: 24,
                         left: 24,
@@ -410,11 +415,11 @@ class DetailPage extends StatelessWidget {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           bottom: 24,
                         ),
                         child: ListView(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           // children: buildPhotos(property.images),
@@ -439,7 +444,7 @@ class DetailPage extends StatelessWidget {
           color: Colors.brown[200],
           size: 28,
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Text(
@@ -455,7 +460,7 @@ class DetailPage extends StatelessWidget {
 
   List<Widget> buildPhotos(List<String> images) {
     List<Widget> list = [];
-    list.add(SizedBox(
+    list.add(const SizedBox(
       width: 24,
     ));
     for (var i = 0; i < images.length; i++) {
@@ -468,9 +473,9 @@ class DetailPage extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 3 / 2,
       child: Container(
-        margin: EdgeInsets.only(right: 24),
+        margin: const EdgeInsets.only(right: 24),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(10),
           ),
           image: DecorationImage(

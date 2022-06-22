@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, avoid_print
+
 import 'dart:io';
 // import 'package:coba/theme/colors.dart';
 import 'package:aplikasi_mobile/page/buyer/transaksi.dart';
@@ -7,8 +9,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 // import 'package:coba/screens/home_page.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:async/async.dart';
 
 class Syarat extends StatefulWidget {
   const Syarat({Key? key}) : super(key: key);
@@ -42,8 +42,8 @@ class _SyaratState extends State<Syarat> {
   String? _extension;
   bool _isLoading = false;
   bool _userAborted = false;
-  bool _multiPick = false;
-  FileType _pickingType = FileType.any;
+  final bool _multiPick = false;
+  final FileType _pickingType = FileType.any;
 
   void _ambilFile() async {
     var path = await filePicker.getDirectoryPath();
@@ -82,24 +82,24 @@ class _SyaratState extends State<Syarat> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown[200],
-        title: Text("Formulir Syarat"),
+        title: const Text("Formulir Syarat"),
         actions: <Widget>[
           IconButton(
             onPressed: () {
               _ambilFile();
             },
-            icon: Icon(Icons.file_upload),
+            icon: const Icon(Icons.file_upload),
           )
         ],
       ),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: ListView(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               "Silahkan Isi Formulir Terlebih Dahulu",
               style: TextStyle(
                   fontSize: 20, color: Color.fromARGB(255, 97, 78, 84)),
@@ -116,11 +116,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Surat Keterangan Karyawan"),
+                const Text("Surat Keterangan Karyawan"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickSuratKaryawan(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
@@ -131,11 +131,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Surat Legalisir Penghasilan (Slip Gaji)"),
+                const Text("Surat Legalisir Penghasilan (Slip Gaji)"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickSuratgaji(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
@@ -146,11 +146,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Surat Legalisir Kartu Pegawai"),
+                const Text("Surat Legalisir Kartu Pegawai"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickSuratPegawai(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
@@ -161,11 +161,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Surat Legalisir SK Pertama dan Terakhir"),
+                const Text("Surat Legalisir SK Pertama dan Terakhir"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickSk(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih File'),
                 ),
@@ -176,11 +176,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto Berwarna Suami dan Istri"),
+                const Text("Foto Berwarna Suami dan Istri"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImagePasFoto(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -193,11 +193,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto KTP"),
+                const Text("Foto KTP"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageKtp(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -211,11 +211,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto Surat Nikah"),
+                const Text("Foto Surat Nikah"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageFotoNikah(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -228,11 +228,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto Kartu Keluarga"),
+                const Text("Foto Kartu Keluarga"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageKk(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -245,11 +245,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto Rekening Tabungan (Min 4 Bulan)"),
+                const Text("Foto Rekening Tabungan (Min 4 Bulan)"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageRekening(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -262,11 +262,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto SIUP dan TDP Perusahaan"),
+                const Text("Foto SIUP dan TDP Perusahaan"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageSiup(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -280,11 +280,11 @@ class _SyaratState extends State<Syarat> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Foto NPWP Pribadi"),
+                const Text("Foto NPWP Pribadi"),
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () => _pickImageNpwp(),
                   child: Text(_multiPick ? 'Pilih Gambars' : 'Pilih Gambar'),
                 ),
@@ -301,16 +301,16 @@ class _SyaratState extends State<Syarat> {
                 ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 181, 149, 137))),
+                          const Color.fromARGB(255, 181, 149, 137))),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Transaksi()));
+                        MaterialPageRoute(builder: (context) => const Transaksi()));
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Data Berhasil Disimpan')));
                   },
                   child: const Text("Simpan"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 )
               ],

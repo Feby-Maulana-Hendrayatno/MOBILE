@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Detail extends StatelessWidget {
   final Property property;
-  Detail({required this.property, Key? key}) : super(key: key);
+  const Detail({required this.property, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,25 +33,25 @@ class Detail extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             height: size.height * 0.35,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
                         onDoubleTap: () => Navigator.pop(context),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back,
                           color: Colors.white,
                           size: 24,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.notifications_none,
                         color: Colors.white,
                         size: 28,
@@ -63,17 +63,17 @@ class Detail extends StatelessWidget {
                   child: Container(),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.yellow[700],
                         borderRadius: BorderRadius.circular(5)),
                     width: 80,
-                    padding: EdgeInsets.symmetric(vertical: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 4),
                     child: Center(
                       child: Text(
                         "For ${property.label}",
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
@@ -83,13 +83,13 @@ class Detail extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         property.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class Detail extends StatelessWidget {
                       Container(
                         height: 50,
                         width: 50,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                         ),
@@ -114,7 +114,7 @@ class Detail extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 24,
                     right: 24,
                     top: 8,
@@ -125,36 +125,36 @@ class Detail extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.location_on,
                             color: Colors.white,
                             size: 16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 4,
                           ),
                           Text(
                             property.location,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.zoom_out_map,
                             color: Colors.white,
                             size: 16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 4,
                           ),
                           Text(
                             property.sqm + " sq/m",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -169,12 +169,12 @@ class Detail extends StatelessWidget {
                             color: Colors.yellow[700],
                             size: 16,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 4,
                           ),
                           Text(
                             property.review + " Reviews",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class Detail extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: size.height * 0.65,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
@@ -205,7 +205,7 @@ class Detail extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -220,20 +220,20 @@ class Detail extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "James Milner",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 4,
                               ),
                               Text(
@@ -262,7 +262,7 @@ class Detail extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 16,
                               ),
                               Container(
@@ -285,11 +285,11 @@ class Detail extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 14,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         right: 24,
                         left: 24,
                         bottom: 24,
@@ -304,7 +304,7 @@ class Detail extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         right: 24,
                         left: 24,
@@ -319,7 +319,7 @@ class Detail extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         right: 24,
                         left: 24,
                         bottom: 24,
@@ -332,7 +332,7 @@ class Detail extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         right: 24,
                         left: 24,
@@ -348,11 +348,11 @@ class Detail extends StatelessWidget {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           bottom: 24,
                         ),
                         child: ListView(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           children: buildPhotos(property.images),
@@ -377,7 +377,7 @@ class Detail extends StatelessWidget {
           color: Colors.yellow[700],
           size: 28,
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Text(
@@ -393,7 +393,7 @@ class Detail extends StatelessWidget {
 
   List<Widget> buildPhotos(List<String> images) {
     List<Widget> list = [];
-    list.add(SizedBox(
+    list.add(const SizedBox(
       width: 24,
     ));
     for (var i = 0; i < images.length; i++) {
@@ -406,9 +406,9 @@ class Detail extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 3 / 2,
       child: Container(
-        margin: EdgeInsets.only(right: 24),
+        margin: const EdgeInsets.only(right: 24),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(10),
           ),
           image: DecorationImage(

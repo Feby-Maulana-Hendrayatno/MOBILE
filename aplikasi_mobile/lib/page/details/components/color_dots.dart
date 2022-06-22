@@ -1,7 +1,6 @@
 import 'package:aplikasi_mobile/model/Product.dart';
 import 'package:aplikasi_mobile/page/details/components/rounded_icon_btn.dart';
 import 'package:aplikasi_mobile/page/home/components/constant.dart';
-import 'package:aplikasi_mobile/page/home/components/size_config.dart';
 import 'package:flutter/material.dart';
 
 
@@ -19,7 +18,7 @@ class ColorDots extends StatelessWidget {
     int selectedColor = 3;
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: 20),
+          const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
           ...List.generate(
@@ -29,12 +28,12 @@ class ColorDots extends StatelessWidget {
               isSelected: index == selectedColor,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           RoundedIconBtn(
             icon: Icons.remove,
             press: () {},
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           RoundedIconBtn(
             icon: Icons.add,
             showShadow: true,
@@ -59,8 +58,8 @@ class ColorDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 2),
-      padding: EdgeInsets.all(8),
+      margin: const EdgeInsets.only(right: 2),
+      padding: const EdgeInsets.all(8),
       height: 40,
       width: 40,
       decoration: BoxDecoration(
