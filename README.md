@@ -121,3 +121,10 @@ https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib
 <br>
 Home
 https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/page/home.dart
+
+
+
+#   Shared Preferences
+saat belum pernah login maka akan di arahkan di unplash, kemudian jika sudah pernah login akan tersimpan di pada navigasi nyang ada pada home serta menyimpan bollean islogin . disini kami menggunakan boolean pada initial route yaitu pengecekan jika tidak memiliki boolean islogin. kemudian saat logout boolean tersebut akan kehapus dalam device.
+<br>
+https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/main.dart
