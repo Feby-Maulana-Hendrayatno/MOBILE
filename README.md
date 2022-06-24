@@ -5,33 +5,69 @@
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/unplash.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/propertiku 1.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/login.jpeg"  height="300" width="150"></th>
-    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/login_berhasil.jpeg"  height="300" width="150"></th>
-    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/register.jpeg"  height="300" width="150"></th>
-    
 </tr>
   <tr>
     <td>Unplash</td>
     <td>Welcome Page</td>
     <td>Login Page</td>
+  </tr>
+</table>
+
+
+
+
+<table>
+  <tr>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/login_berhasil.jpeg"  height="300" width="150"></th>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/register.jpeg"  height="300" width="150"></th>
+    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_data_register_kosong.jpeg" height="300" width="150"></th>
+  </tr>
+  <tr>
     <td>Alert Login Berhasil</td>
     <td>Register</td>
   </tr>
 </table>
 
+
 <table>
   <tr>
-    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_data_register_kosong.jpeg" height="300" width="150"></th>
-    <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_register_berhasil.jpeg"  height="300" width="150"></th>
+        <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/alert_register_berhasil.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/home.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/formulir_syarat.jpeg"  height="300" width="150"></th>
+    /tr>
+  <tr>
+    <td>Alert Register Berhasil</td>
+    <td>Home Page</td>
+    <td>Syarat</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+  <tr>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/profile edit.jpeg"  height="300" width="150"></th>
     <th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/image/notif.jpeg"  height="300" width="150"></th>
   </tr>
   <tr>
-    <td>Alert Data Tidak Boleh Kosong</td>
-    <td>Alert Register Berhasil</td>
-    <td>Home Page</td>
-    <td>Syarat</td>
     <td>Edit Profile</td>
     <td>Notifikasi</td>
   </tr>
