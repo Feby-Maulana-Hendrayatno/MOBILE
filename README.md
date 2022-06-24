@@ -1,5 +1,5 @@
 Kelompok 4 Propertiku
-<th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/images/1.png"  height="50" width="250"></th>
+<th><img src="https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/assets/images/1.png"  height="150" width="250"></th>
 
 <br>
 # Tampilan Mobile Propertiku
