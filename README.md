@@ -102,12 +102,22 @@ Abstraksi tidak bergantung pada detail, sedangkan detail harus bergantung pada a
  -->
 
   
-#Navigasi Buttom multi layout
+# Navigasi Buttom multi layout
   navigasi menampung index dari page, index tersebut untuk mengarahkan ke page yang diingkan dengan cara meng-klik icon maka akan di arahkan ke page dengan animasi transisi.
 https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/navigasi_bottom/navigasi.dart
   
 # Koneksi Pada API
   disini kami menggunakan koneksi yaitu app_config.dart yang mengembalikan ip/api/ . ketika kita membutuhkan tinggal memanggil kelas AppConfig/ nama api yang akan kita panggil, contohnya login dll. dengan adanya koneksi tersebut jika terjadi perubahan alamat pada api, kami hanya mengganti alamat api pada app_config.dart (tidak perlu mengganti alamat per-page).
-  
- #API
+
+# API
  https://github.com/Feby-Maulana-Hendrayatno/WEB_-_API/tree/main/WEB_%26_API_PROPERTY/app/Http/Controllers
+
+#  CRUD
+Login
+https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/auth/login_page.dart
+<br>
+Register
+https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/auth/register_page.dart
+<br>
+Home
+https://github.com/Feby-Maulana-Hendrayatno/MOBILE/blob/main/aplikasi_mobile/lib/page/home.dart
