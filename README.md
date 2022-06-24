@@ -25,6 +25,7 @@
   <tr>
     <td>Alert Login Berhasil</td>
     <td>Register</td>
+    <td>Alert Data tidak boleh kosong</td>
   </tr>
 </table>
 
