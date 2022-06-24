@@ -1,3 +1,4 @@
+import 'package:aplikasi_mobile/firebase_options.dart';
 import 'package:aplikasi_mobile/navigasi_bottom/navigasi.dart';
 import 'package:aplikasi_mobile/page/buyer/profile_settings.dart';
 import 'package:aplikasi_mobile/page/chat_page.dart';
@@ -11,15 +12,36 @@ import 'package:aplikasi_mobile/page/property/property.dart';
 import 'package:aplikasi_mobile/page/syarat/add_syarat.dart';
 import 'package:aplikasi_mobile/page/welcome/welcome.dart';
 import 'package:aplikasi_mobile/splash/splash.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:aplikasi_mobile/auth/login_page.dart';
 import 'package:sp_util/sp_util.dart';
 
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print("Handling a background message: ${message.messageId}");
+}
 
 // void main() => runApp(MyApp());
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Got a message whilst in the foreground!');
+    print('Message data: ${message.data}');
+
+    if (message.notification != null) {
+      print('Message also contained a notification: ${message.notification}');
+    }
+  });
   await SpUtil.getInstance();
+  
   runApp(const MyApp());
 }
 
